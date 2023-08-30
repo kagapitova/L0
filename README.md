@@ -4,10 +4,10 @@
   
 ## Project setup
 
-1. Clone repo https://github.com/kagapitova/L0.git
+1. Clone repo.
 
 ```
-git clone Товары и точка
+git clone https://github.com/kagapitova/L0.git
 ```
 
 2. Open the project in IDE.
