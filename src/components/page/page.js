@@ -1,8 +1,8 @@
 function renderPage(){
 	let pageHTML = `
-<div class="main">
+<div class="main__container">
     <nav class="navigation"></nav>
-    <section class="main__container">
+    <section class="main">
 	    <div class="cart__container">
 	    		<div class="cart"></div>
 	        <div class="no-product__container"></div>

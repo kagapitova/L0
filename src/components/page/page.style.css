@@ -1,8 +1,25 @@
 .main__container {
-    background-color: #F6F6FA;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.main {
+    height: 1855px;
+    display: block;
+    background-color: rgba(246, 246, 250, 1);
     border-radius: 24px;
 }
 
 .navigation {
     height: 88px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__container {
+    height: 64px;
 }
