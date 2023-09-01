@@ -7,18 +7,88 @@
 }
 
 .burger__container {
+   margin-right: 16px;
    display: flex;
    border: solid 1px rgba(255, 255, 255, 0.45);
    border-radius: 8px;
-   height: 48px;
+   height: 47px;
+   padding: 3px;
    width: 48px;
-   flex-direction: row;
+   flex-direction: column;
    align-items: center;
-   justify-content: center;
+   justify-content: space-evenly;
    cursor: pointer;
 }
 
+.burger__span {
+   width: 28px;
+   height: 4px;
+   background-color: #FFFFFF;
+   border-radius: 8px;
+}
+
+.burger__container:hover {
+   border: solid 1px rgba(255, 255, 255, 1);
+}
+
+body {
+   overflow: hidden;
+}
+
+.menu {
+   font-family: "Segoe UI", Arial, sans-serif;
+   z-index: 10;
+   display: flex;
+   padding-top: 20px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 320px;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 1);
+   transform: translateX(-150%);
+   transition: transform .3s ease;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-content: center;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.menu__link {
+   margin-top: 10px;
+   z-index: 12;
+   text-align: left;
+   width: 90%;
+   font-size: 20px;
+   line-height: 22px;
+   color: #242424;
+   display: block;
+   position: relative;
+   padding: 3px 5px 3px 44px;
+   border-radius: 8px;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+}
+
+.menu__link:hover {
+   background: #cb11ab;
+   color: #fff;
+}
+
+.menu.is-open {
+   transform: translateX(0%);
+}
+
+.menu-close__btn {
+   width: 20px;
+   position: relative;
+   left: 36%;
+}
+
 .input__container {
+   margin-right: 11px;
    display: flex;
    width: 71.5%;
    padding-left: 7px;
@@ -33,6 +103,10 @@
    line-height: 24px;
    padding-bottom: 4px;
    padding-left: 2%;
+}
+
+.search-mini__container {
+   display: none;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -55,11 +129,11 @@
 
 .search__img {
    position: relative;
-   right: 4%;
+   right: 4.5%;
    opacity: 40%;
 }
 
-.logo__container {
+.logo__container, .logo-mini__text {
    font-family: "Segoe UI", Arial, sans-serif;
    width: 118px;
    font-weight: 600;
@@ -73,6 +147,15 @@
 
 .logo__container2 {
    letter-spacing: 2px;
+}
+
+.logo__text {
+   margin-right: 12px;
+   text-align: left;
+}
+
+.logo-mini__text {
+   display: none;
 }
 
 .profile-cart__container {
@@ -128,4 +211,77 @@
    position: absolute;
    top: 11px;
    right: 27px;
+}
+@media screen and (max-width: 1025px) {
+
+   .input__container{
+      width: 60.5%;
+      margin-right: 13px;
+   }
+
+   .search__input {
+      padding-left: 3%;
+   }
+
+   .search__img {
+      right: 7%;
+   }
+   .burger-logo__container {
+      margin-left: 25px;
+   }
+}
+
+@media screen and (max-width: 800px) {
+   .navigation {
+      justify-content: space-between;
+      height: 56px;
+   }
+
+   .burger-logo__container {
+      margin-left: 13px;
+   }
+
+   .burger__container {
+      border: none;
+      width: 22px;
+      margin-right: 26px;
+      height: 37px;
+      align-items: flex-start;
+   }
+
+   .burger__span {
+      width: 22px;
+      height: 2px;
+   }
+
+   .burger__span:last-of-type {
+      width: 16px
+   }
+
+   .search-mini__container {
+      display: flex;
+      margin-right: 14px;
+      width: 31px;
+   }
+
+   .profile-cart__container {
+      display: none;
+   }
+
+   .input__container {
+      display: none;
+   }
+
+   .logo__text {
+      display: none;
+   }
+
+   .logo-mini__text {
+      display: flex;
+      width: 90%;
+      font-size: 19px;
+      letter-spacing: 1.9px;
+      padding-bottom: 2px;
+   }
+
 }

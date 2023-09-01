@@ -1,20 +1,15 @@
-# L0
-  Implementation of an interactive adaptive layout of the cart page for the "Товары и точка" application.
+# 🚀 Welcome to your new awesome project!
 
-  
-## Project setup
-
-1. Clone repo.
+This project has been created using **webpack-cli**, you can now run
 
 ```
-git clone https://github.com/kagapitova/L0.git
+npm run build
 ```
 
-2. Open the project in IDE.
-3. Open index.html in browser.
+or
 
-## Technology stack
+```
+yarn build
+```
 
-- `CSS`.
-- `HTML`.
-- `JS`.
+to bundle your application

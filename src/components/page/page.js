@@ -1,4 +1,5 @@
-function renderPage(){
+import styles from './page.style.css'
+export function renderPage(){
 	let pageHTML = `
 <div class="main__container">
     <nav class="navigation"></nav>
@@ -21,5 +22,4 @@ function renderPage(){
 `;
 	const body = document.querySelector('body');
 	body.innerHTML = pageHTML
-	console.log('страница есть')
 }
