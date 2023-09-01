@@ -3,7 +3,7 @@ export function renderNavigation(){
 	let navHTML = `
 			<div class="menu">
 				<button class="menu-close__btn">
-					<img src="https://cdn-icons-png.flaticon.com/512/17/17047.png" alt="close">
+					<img src="https://cdn-icons-png.flaticon.com/512/7420/7420933.png" alt="close">
 				</button>
 				<a href="https://www.wildberries.ru/catalog/zhenshchinam" class="menu__link">
 		    	Женщинам
@@ -45,6 +45,13 @@ export function renderNavigation(){
 					<img class="search__img2" src="images/svg/Search.svg" alt="search">
 		</button>
 	</div>
+	<div class="search__aside">
+		<button class="search-close__btn">
+				<img src="https://cdn-icons-png.flaticon.com/512/7420/7420933.png" alt="close">
+		</button>
+		<input class="search-input__aside" type="text" placeholder="Я ищу...">
+		<img class="search__img3" src="images/svg/Search.svg" alt="search">
+	</div>
 	<div class="profile-cart__container">
 		<div class="profile__container">
       <img class="profile__img" src="images/svg/Exclude.svg" alt="profile">
@@ -62,14 +69,54 @@ export function renderNavigation(){
 }
 
 export function setMenuToggler(){
+	const body = document.querySelector('body');
 	const btn = document.querySelector('.burger-logo__container')
 	const menu = document.querySelector('.menu')
 	const closer = document.querySelector('.menu-close__btn')
+	const search = document.querySelector('.search-mini__btn')
+	const searchAside = document.querySelector('.search__aside')
+	const searchCloser = document.querySelector('.search-close__btn')
+	
 	
 	btn.addEventListener('click', () => {
-		menu.classList.toggle('is-open')
-	})
+		menu.classList.toggle('is-open');
+		body.setAttribute("style", "overflow: hidden");
+	});
 	closer.addEventListener('click', () => {
 		menu.classList.remove('is-open')
-	})
+		body.removeAttribute("style");
+	});
+	search.addEventListener('click', () => {
+		searchAside.classList.toggle('is-open');
+		body.setAttribute("style", "overflow: hidden");
+	});
+	searchCloser.addEventListener('click', () => {
+		searchAside.classList.remove('is-open')
+		body.removeAttribute("style");
+	});
+}
+
+export function renderMobilNavbar() {
+	const nav = `
+	<div class="mobil__navigation">
+		<div class="mobil-svg__navigation">
+			<img class="mobil__svg" src="images/svg/Union.svg">
+		</div>
+		<div class="mobil-svg__navigation">
+			<img class="mobil__svg" src="images/svg/catalog.svg">
+		</div>
+		<div class="mobil-svg__navigation cart-logo">
+			<img class="mobil__svg" src="images/svg/cart2.svg">
+			<div class="cart__item2">3</div>
+		</div>
+		<div class="mobil-svg__navigation">
+			<img class="mobil__svg" src="images/svg/favorites.svg">
+		</div>
+		<div class="mobil-svg__navigation">
+			<img class="mobil__svg" src="images/svg/profile.svg">
+		</div>
+	</div>`;
+	
+	const mainCont = document.querySelector('.footer__mobile_nav');
+	mainCont.innerHTML = nav;
 }

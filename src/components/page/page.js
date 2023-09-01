@@ -18,6 +18,7 @@ export function renderPage(){
 			</div>
 		</section>
     <footer class="footer__container"></footer>
+		<div class="footer__mobile_nav"></div>
 </div>
 `;
 	const body = document.querySelector('body');
