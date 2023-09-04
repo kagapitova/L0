@@ -51,7 +51,6 @@
 }
 
 .menu__link {
-   font-family: "Segoe UI", Arial, sans-serif;
    margin-top: 10px;
    z-index: 12;
    text-align: left;
@@ -136,7 +135,7 @@
 }
 
 .logo__container, .logo-mini__text {
-   font-family: "Segoe UI", Arial, sans-serif;
+   font-family: 'Segoe UI',Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
    width: 118px;
    font-weight: 600;
    font-style: normal;
@@ -168,7 +167,7 @@
    padding-right: 20px;
 }
 
-.profile__container, .cart__container {
+.profile__container, .cart-logo__container {
    display: flex;
    width: 56px;
    height: 47px;
@@ -181,8 +180,8 @@
    cursor: pointer;
 }
 
-.cart__container {
-   padding-right: 4px;
+.cart-logo__container {
+   padding-right: 1px;
    height: 50px;
    margin-bottom: 2px;
 }
@@ -192,12 +191,13 @@
    height: 20px;
 }
 
-.cart__img {
-   width: 26px;
+.cart-logo__img {
+   width: 28px;
    height: 26px;
+   padding-right: 4px;
 }
 
-.profile__text, .cart__text {
+.profile__text, .cart-logo__text {
    color: rgba(255, 255, 255, 1);
 }
 

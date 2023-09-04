@@ -57,9 +57,9 @@ export function renderNavigation(){
       <img class="profile__img" src="images/svg/Exclude.svg" alt="profile">
       <p class="profile__text">Профиль</p>
 		</div>
-		<div class="cart__container">
-		  <img class="cart__img" src="images/svg/Cart.svg" alt="cart">
-      <p class="cart__text">Корзина</p>
+		<div class="cart-logo__container">
+		  <img class="cart-logo__img" src="images/svg/Cart.svg" alt="cart">
+      <p class="cart-logo__text">Корзина</p>
       <div class="cart__item">3</div>
 		</div>
 	</div>

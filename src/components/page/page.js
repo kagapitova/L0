@@ -5,6 +5,7 @@ export function renderPage(){
     <nav class="navigation"></nav>
     <section class="main">
 	    <div class="cart__container">
+	    <h2 class="cart__header">Корзина</h2>
 	    		<div class="cart"></div>
 	        <div class="no-product__container"></div>
 	        <div class="info__container">
