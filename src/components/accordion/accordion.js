@@ -1,5 +1,7 @@
 import style from './accordion.style.css'
+import {itemArr, renderCartItem} from "../itemcard/itemcard";
 export function renderCartAccordion(){
+const carthtml = renderCartItem(itemArr);
 const accHTML = `
 <div class="checkbox-accordion-cart__container">
 		<label for="all__items" class="label-all-items__container checkbox style-a">
@@ -10,7 +12,7 @@ const accHTML = `
 	<button class="accordion"><img class="accordion__arrov" src="images/svg/arrov.svg" alt="arrov"></button>
 </div>
 <div class="accordion-cart__content">
-	Здесь будут карточки товаров
+	${carthtml}
 </div>
 `
 	const cartAccPlace = document.querySelector('.cart');
@@ -30,5 +32,4 @@ const accHTML = `
 			}
 		};
 	});
-	
 }

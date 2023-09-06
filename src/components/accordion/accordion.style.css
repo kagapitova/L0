@@ -41,13 +41,15 @@ button.accordion {
 }
 
 .accordion-cart__content {
-    padding: 0 20px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-in-out;
 }
 
 .accordion-cart__content.is-open {
+    gap: 21px;
+    display: grid;
+    width: 99%;
     max-height: none;
     transition: max-height 0.2s ease-in-out;
 }
