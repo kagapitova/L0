@@ -88,7 +88,7 @@ export function renderCartItem(arr){
 	<div class="card-settings__container">
 	<div class="items-counter">
 		<button class="btn-item__minus">−</button>
-		<input  class="items-counter-input" type="text" min="1" value="1">
+		<input  class="items-counter-input" type="text" min="1" max='${item.quantity}' value="1">
 		<button class="btn-item__plus"> +</button>
 	</div>
 		<p class="available-quantity">Осталось ${item.quantity} шт.</p>
@@ -136,7 +136,7 @@ export function renderCartItem(arr){
 	<div class="card-settings__container">
 		<div class="items-counter">
 		<button class="btn-item__minus">−</button>
-		<input  class="items-counter-input" type="text" min="1" value="1">
+		<input  class="items-counter-input" type="text" min="1" max='${item.quantity}' value="1">
 		<button class="btn-item__plus"> +</button>
 	</div>
 		<div class="item-tags item-tags-pad">
@@ -184,7 +184,7 @@ export function renderCartItem(arr){
 	<div class="card-settings__container">
 		<div class="items-counter">
 		<button class="btn-item__minus">−</button>
-		<input  class="items-counter-input" type="text" min="1" value="1">
+		<input  class="items-counter-input" type="text" min="1"  max='${item.quantity}' value="1">
 		<button class="btn-item__plus"> +</button>
 		</div>
 		<p class="available-quantity">Осталось ${item.quantity} шт.</p>
@@ -254,3 +254,61 @@ export function cardSetLictenner(){
 		})
 	})
 }
+
+
+export function renderUnCartItem(arr){
+		let result = ``;
+	arr.forEach((item,index)=>{
+		if(item.hasOwnProperty('color') && item.hasOwnProperty('size')){
+			result += `
+<div class="cart-item__container cart-item__container-unabel">
+	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel"><img src=${item.image} alt="${item.alt}"></div>
+	<div class="card-text__container">
+		<p class="cart-item__header cart-item__header-unabel">${item.name}</p>
+		<div class="item-size-color__container">
+			<p class="item-color">Цвет: ${item.color}</p>
+			<p class="item-size">Размер: ${item.size}</p>
+		</div>
+	</div>
+	<div class="card-settings__container card-settings__container-unabel">
+	<div class="item-tags">
+			<img src="images/svg/like.svg" alt="like" class="like">
+			<img src="images/svg/red.svg" alt="delete" class="delete">
+		</div>
+	</div>
+</div>
+		`} else if (item.hasOwnProperty('color') && !item.hasOwnProperty('size')){
+			result += `
+<div class="cart-item__container cart-item__container-unabel">
+	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel"><img src=${item.image} alt="${item.alt}"></div>
+	<div class="card-text__container">
+		<p class="cart-item__header cart-item__header-unabel">${item.name}</p>
+		<div class="item-size-color__container">
+			<p class="item-color">Цвет: ${item.color}</p>
+		</div>
+	</div>
+	<div class="card-settings__container card-settings__container-unabel">
+	<div class="item-tags">
+			<img src="images/svg/like.svg" alt="like" class="like">
+			<img src="images/svg/red.svg" alt="delete" class="delete">
+		</div>
+	</div>
+</div>
+		`} else if (!item.hasOwnProperty('color') && !item.hasOwnProperty('size')){
+			result += `
+<div class="cart-item__container cart-item__container-unabel">
+	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel"><img src=${item.image} alt="${item.alt}"></div>
+	<div class="card-text__container">
+		<p class="cart-item__header cart-item__header-unabel">${item.name}</p>
+	</div>
+	<div class="card-settings__container card-settings__container-unabel">
+	<div class="item-tags">
+			<img src="images/svg/like.svg" alt="like" class="like">
+			<img src="images/svg/red.svg" alt="delete" class="delete">
+		</div>
+	</div>
+</div>
+		`}
+	})
+return result
+};

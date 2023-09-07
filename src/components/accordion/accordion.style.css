@@ -5,7 +5,7 @@
     margin: 50px auto;
 }
 
-button.accordion {
+button.accordion , button.accordion-unable {
     display: flex;
     width: 30%;
     border: none;
@@ -22,12 +22,31 @@ button.accordion {
     justify-content: flex-end;
 }
 
-.accordion__arrov {
+button.accordion-unable {
+
+    padding:25px 11px 11px;
+
+}
+
+.unable__accordion {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 25px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.6px;
+    text-align: left;
+    color: #333;
+    padding-bottom: 2px;
+    margin-bottom: 13px;
+}
+
+.accordion__arrov, .accordion__arrov-unable{
     transition: margin .3s ease,transform .3s ease;
     transform: rotate(180deg);
 }
 
-.accordion__arrov-open {
+.accordion__arrov-open, .accordion__arrov-unable-open{
     transition: margin .3s ease,transform .3s ease;
     transform: rotate(0deg);
 }
@@ -40,13 +59,17 @@ button.accordion {
     transition: max-height 0.2s ease-in-out;
 }
 
-.accordion-cart__content {
+
+.label-all-items__container.checkbox.style-a.unable {
+    padding-left: 0;
+}
+.accordion-cart__content, .accordion-cart__content-unable{
     max-height: 0;
     display: none;
     transition: max-height 0.2s ease-in-out;
 }
 
-.accordion-cart__content.is-open {
+.accordion-cart__content.is-open, .accordion-cart__content-unable.is-open {
     gap: 21px;
     display: grid;
     width: 99%;
