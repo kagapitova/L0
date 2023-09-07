@@ -9,7 +9,8 @@ export const itemArr = [
 		stock: 'Коледино WB',
 		provider: 'OOO Вайлдберриз',
 		price: 1051,
-		sale: 529,
+		sale: 264.5,
+		castomsale: 264.5,
 		currency: ' сом',
 		quantity: 2,
 		tooltip: 'OOO «ВАЙЛДБЕРРИЗ»',
@@ -24,7 +25,8 @@ export const itemArr = [
 		stock: 'Коледино WB',
 		provider: 'OOO Мегапрофстиль',
 		price: 11500,
-		sale: 10500,
+		sale: 5250,
+		castomsale: 5250,
 		currency: ' сом',
 		quantity: 200,
 		tooltip: 'ООО «МЕГАПРОФСТИЛЬ»',
@@ -38,7 +40,8 @@ export const itemArr = [
 		stock: 'Коледино WB',
 		provider: 'OOO Вайлдберриз',
 		price: 950,
-		sale: 704,
+		sale: 352,
+		castomsale: 352,
 		currency: ' сом',
 		quantity: 2,
 		tooltip: 'OOO «ВАЙЛДБЕРРИЗ»',
@@ -46,6 +49,11 @@ export const itemArr = [
 		adres: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение&nbsp;2, офис&nbsp;34'
 	}
 ];
+
+itemArr.forEach((item)=>{
+	item.percentsale = (item.sale/item.price).toFixed(2)*100 + '%';
+	item.percentcastomsale = (item.castomsale/item.price).toFixed(2)*100 +'%';
+})
 
 export function renderCartItem(arr){
 	let result = ``;
@@ -69,7 +77,7 @@ export function renderCartItem(arr){
 			${item.provider}
 			<div class="provider-info" data-tooltip="${item.tooltip}">
 			i
-			 <div class="provider-info__tooltip">
+			 <div class="provider-info__tooltip tooltip-provider__size">
 			   <div class="info__header">${item.tooltip}</div>
 	         <div>${item.ogrn}</div>
 	         <div>${item.adres}</div>
@@ -87,7 +95,12 @@ export function renderCartItem(arr){
 	</div>
 	<div class="price-block">
 			<div class="item-act-price"><p >${item.price - item.sale} <p class="item-act-price__currency">${item.currency}</p></p></div>
-			<div class="item-price"><p >${item.price}<p class="item-price__currency">${item.currency}</p></p></div>
+			<div class="item-price"><p >${item.price}<p class="item-price__currency">${item.currency}</p></p>
+			</div>
+			<div class="price-info__tooltip tooltip-sale__size">
+	         <div class="tooltip-sale__text"><p>Скидка ${item.percentsale}</p><p class="info__header">- ${item.sale}</p></div>
+           <div class="tooltip-sale__text"><p>Скидка ${item.percentcastomsale}</p><p class="info__header">- ${item.castomsale}</p></div>
+		   	</div>
 	</div>
 </div>
 		`} else if (item.hasOwnProperty('color') && !item.hasOwnProperty('size')){
@@ -108,7 +121,7 @@ export function renderCartItem(arr){
 			${item.provider}
 			<div class="provider-info" data-tooltip="${item.tooltip}">
 			i
-			 <div class="provider-info__tooltip">
+			 <div class="provider-info__tooltip tooltip-provider__size">
 			   <div class="info__header">${item.tooltip}</div>
 	         <div>${item.ogrn}</div>
 	         <div>${item.adres}</div>
@@ -135,6 +148,10 @@ export function renderCartItem(arr){
 					<p class="item-price__currency">${item.currency}</p>
 				</p>
 			</div>
+			<div class="price-info__tooltip tooltip-sale__size">
+	         <div class="tooltip-sale__text"><p>Скидка ${item.percentsale}</p><p class="info__header">- ${item.sale}</p></div>
+           <div class="tooltip-sale__text"><p>Скидка ${item.percentcastomsale}</p><p class="info__header">- ${item.castomsale}</p></div>
+		   	</div>
 	</div>
 </div>
 		`} else if (!item.hasOwnProperty('color') && !item.hasOwnProperty('size')){
@@ -152,7 +169,7 @@ export function renderCartItem(arr){
 			${item.provider}
 			<div class="provider-info" data-tooltip="${item.tooltip}">
 			i
-			 <div class="provider-info__tooltip">
+			 <div class="provider-info__tooltip tooltip-provider__size">
 			   <div class="info__header">${item.tooltip}</div>
 	         <div>${item.ogrn}</div>
 	         <div>${item.adres}</div>
@@ -171,6 +188,10 @@ export function renderCartItem(arr){
 	<div class="price-block">
 			<div class="item-act-price"><p >${item.price - item.sale} <p class="item-act-price__currency">${item.currency}</p></p></div>
 			<div class="item-price"><p >${item.price}<p class="item-price__currency">${item.currency}</p></p></div>
+			<div class="price-info__tooltip tooltip-sale__size">
+	         <div class="tooltip-sale__text"><p>Скидка ${item.percentsale}</p><p class="info__header">- ${item.sale}</p></div>
+           <div class="tooltip-sale__text"><p>Скидка ${item.percentcastomsale}</p><p class="info__header">- ${item.castomsale}</p></div>
+		   	</div>
 	</div>
 </div>
 		`}
@@ -183,6 +204,7 @@ export function cardSetLictenner(){
 	const like = document.querySelectorAll('.like');
 	const settingsContainer = document.querySelectorAll('.card-settings__container ');
 	const provider = document.querySelectorAll('.item-provider');
+	const price = document.querySelectorAll('.item-price');
 	like.forEach(el=>{
 		el.addEventListener('click',()=>{
 				el.classList.toggle('like-red')
@@ -209,6 +231,18 @@ export function cardSetLictenner(){
 	provider.forEach(el=>{
 		el.addEventListener('mouseout',()=>{
 			el.querySelector('.provider-info__tooltip').classList.remove('tooltip-open')
+		})
+	})
+	price.forEach(el=>{
+		el.addEventListener('mouseover',()=>{
+			const tooltip = el.nextElementSibling;
+			tooltip.classList.add('tooltip-open')
+		})
+	})
+	price.forEach(el=>{
+		el.addEventListener('mouseout',()=>{
+			const tooltip = el.nextElementSibling;
+			tooltip.classList.remove('tooltip-open')
 		})
 	})
 }

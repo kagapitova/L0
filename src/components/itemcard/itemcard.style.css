@@ -72,15 +72,11 @@
     border: solid 1px rgba(151, 151, 175, 1);
 }
 
-.provider-info__tooltip {
-    left: 143px;
+.provider-info__tooltip, .price-info__tooltip{
     position: absolute;
-    margin-top: 3px;
     padding: 13px 16px;
     border-radius: 8px;
     background: #FFFFFF;
-    width: 280px;
-    height: 104px;
     color: black;
     opacity: 0;
     transition: opacity 0.3s ease-out;
@@ -97,7 +93,32 @@
     opacity: 1;
 }
 
+.tooltip-provider__size {
+    left: 143px;
+    margin-top: 3px;
+    width: 280px;
+    height: 104px;
+}
+
+.tooltip-sale__size {
+    color: rgba(160, 160, 164, 1);
+    width: 239px;
+    display: flex;
+    height: 64px;
+    flex-direction: column;
+    font-size: 13px;
+    margin-top: 58px;
+}
+
+.tooltip-sale__text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
 .info__header {
+    color: black;
     font-weight: 700;
 }
 
