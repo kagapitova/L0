@@ -86,7 +86,11 @@ export function renderCartItem(arr){
 		</div>
 	</div>
 	<div class="card-settings__container">
-		<div class="items-counter"><button class="btn-item__minus">−</button>1<button class="btn-item__plus"> +</button></div>
+	<div class="items-counter">
+		<button class="btn-item__minus">−</button>
+		<input  class="items-counter-input" type="text" min="1" value="1">
+		<button class="btn-item__plus"> +</button>
+	</div>
 		<p class="available-quantity">Осталось ${item.quantity} шт.</p>
 		<div class="item-tags">
 			<img src="images/svg/like.svg" alt="like" class="like">
@@ -94,7 +98,7 @@ export function renderCartItem(arr){
 		</div>
 	</div>
 	<div class="price-block">
-			<div class="item-act-price"><p >${item.price - item.sale} <p class="item-act-price__currency">${item.currency}</p></p></div>
+			<div class="item-act-price"><p >${item.price - item.sale - item.castomsale} <p class="item-act-price__currency">${item.currency}</p></p></div>
 			<div class="item-price"><p >${item.price}<p class="item-price__currency">${item.currency}</p></p>
 			</div>
 			<div class="price-info__tooltip tooltip-sale__size">
@@ -131,17 +135,17 @@ export function renderCartItem(arr){
 	</div>
 	<div class="card-settings__container">
 		<div class="items-counter">
-			<button class="btn-item__minus">−</button>
-			1
-			<button class="btn-item__plus">+</button>
-		</div>
+		<button class="btn-item__minus">−</button>
+		<input  class="items-counter-input" type="text" min="1" value="1">
+		<button class="btn-item__plus"> +</button>
+	</div>
 		<div class="item-tags item-tags-pad">
 			<img src="images/svg/like.svg" alt="like" class="like">
 			<img src="images/svg/red.svg" alt="delete" class="delete">
 		</div>
 	</div>
 	<div class="price-block">
-			<div class="item-act-price"><p >${item.price - item.sale} <p class="item-act-price__currency">${item.currency}</p></p></div>
+			<div class="item-act-price"><p >${item.price - item.sale - item.castomsale} <p class="item-act-price__currency">${item.currency}</p></p></div>
 			<div class="item-price">
 				<p>
 					${item.price}
@@ -178,7 +182,11 @@ export function renderCartItem(arr){
 		</div>
 	</div>
 	<div class="card-settings__container">
-		<div class="items-counter"><button class="btn-item__minus">−</button>1<button class="btn-item__plus">+</button></div>
+		<div class="items-counter">
+		<button class="btn-item__minus">−</button>
+		<input  class="items-counter-input" type="text" min="1" value="1">
+		<button class="btn-item__plus"> +</button>
+		</div>
 		<p class="available-quantity">Осталось ${item.quantity} шт.</p>
 		<div class="item-tags">
 			<img src="images/svg/like.svg" alt="like" class="like">
@@ -186,7 +194,7 @@ export function renderCartItem(arr){
 		</div>
 	</div>
 	<div class="price-block">
-			<div class="item-act-price"><p >${item.price - item.sale} <p class="item-act-price__currency">${item.currency}</p></p></div>
+			<div class="item-act-price"><p >${item.price - item.sale - item.castomsale} <p class="item-act-price__currency">${item.currency}</p></p></div>
 			<div class="item-price"><p >${item.price}<p class="item-price__currency">${item.currency}</p></p></div>
 			<div class="price-info__tooltip tooltip-sale__size">
 	         <div class="tooltip-sale__text"><p>Скидка ${item.percentsale}</p><p class="info__header">- ${item.sale}</p></div>
