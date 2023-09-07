@@ -36,13 +36,13 @@ button.accordion {
     background-color: white;
     padding: 0 20px;
     max-height: 0;
-    overflow: hidden;
+    display: none;
     transition: max-height 0.2s ease-in-out;
 }
 
 .accordion-cart__content {
     max-height: 0;
-    overflow: hidden;
+    display: none;
     transition: max-height 0.2s ease-in-out;
 }
 

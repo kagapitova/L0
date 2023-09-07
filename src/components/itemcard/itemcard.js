@@ -12,7 +12,7 @@ export const itemArr = [
 		sale: 529,
 		currency: ' сом',
 		quantity: 2,
-		tooltip: 'OOO «Вайлдберриз»',
+		tooltip: 'OOO «ВАЙЛДБЕРРИЗ»',
 		ogrn: 'ОГРН: 5167746237148',
 		adres: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение&nbsp;2, офис&nbsp;34'
 	},
@@ -27,7 +27,7 @@ export const itemArr = [
 		sale: 10500,
 		currency: ' сом',
 		quantity: 200,
-		tooltip: 'ООО «Мегапрофстиль»',
+		tooltip: 'ООО «МЕГАПРОФСТИЛЬ»',
 		ogrn: 'ОГРН: 5167746237148',
 		adres: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение&nbsp;2, офис&nbsp;34'
 	},
@@ -41,7 +41,7 @@ export const itemArr = [
 		sale: 704,
 		currency: ' сом',
 		quantity: 2,
-		tooltip: 'OOO «Вайлдберриз»',
+		tooltip: 'OOO «ВАЙЛДБЕРРИЗ»',
 		ogrn: 'ОГРН: 5167746237148',
 		adres: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение&nbsp;2, офис&nbsp;34'
 	}
@@ -67,7 +67,14 @@ export function renderCartItem(arr){
 		<div class="item-stock">${item.stock}</div>
 		<div class="item-provider">
 			${item.provider}
-			<div class="provider-info" data-tooltip="${item.tooltip}">i</div>
+			<div class="provider-info" data-tooltip="${item.tooltip}">
+			i
+			 <div class="provider-info__tooltip">
+			   <div class="info__header">${item.tooltip}</div>
+	         <div>${item.ogrn}</div>
+	         <div>${item.adres}</div>
+		   	</div>
+		   </div>
 		</div>
 	</div>
 	<div class="card-settings__container">
@@ -99,7 +106,14 @@ export function renderCartItem(arr){
 		<div class="item-stock">${item.stock}</div>
 		<div class="item-provider">
 			${item.provider}
-			<div class="provider-info" data-tooltip="${item.tooltip}">i</div>
+			<div class="provider-info" data-tooltip="${item.tooltip}">
+			i
+			 <div class="provider-info__tooltip">
+			   <div class="info__header">${item.tooltip}</div>
+	         <div>${item.ogrn}</div>
+	         <div>${item.adres}</div>
+		   	</div>
+		   </div>
 		</div>
 	</div>
 	<div class="card-settings__container">
@@ -136,7 +150,14 @@ export function renderCartItem(arr){
 		<div class="item-stock item-stock-last">${item.stock}</div>
 		<div class="item-provider">
 			${item.provider}
-			<div class="provider-info" data-tooltip="${item.tooltip}">i</div>
+			<div class="provider-info" data-tooltip="${item.tooltip}">
+			i
+			 <div class="provider-info__tooltip">
+			   <div class="info__header">${item.tooltip}</div>
+	         <div>${item.ogrn}</div>
+	         <div>${item.adres}</div>
+		   	</div>
+		   </div>
 		</div>
 	</div>
 	<div class="card-settings__container">
@@ -161,7 +182,7 @@ export function renderCartItem(arr){
 export function cardSetLictenner(){
 	const like = document.querySelectorAll('.like');
 	const settingsContainer = document.querySelectorAll('.card-settings__container ');
-	const provider = document.querySelectorAll('.provider-info');
+	const provider = document.querySelectorAll('.item-provider');
 	like.forEach(el=>{
 		el.addEventListener('click',()=>{
 				el.classList.toggle('like-red')
@@ -178,6 +199,16 @@ export function cardSetLictenner(){
 		el.addEventListener('mouseout',()=>{
 			el.querySelector('.item-tags').classList.remove('item-tags-visible')
 			el.querySelector('.available-quantity').classList.remove('item-tags-visible')
+		})
+	})
+	provider.forEach(el=>{
+		el.addEventListener('mouseover',()=>{
+			el.querySelector('.provider-info__tooltip').classList.add('tooltip-open')
+		})
+	})
+	provider.forEach(el=>{
+		el.addEventListener('mouseout',()=>{
+			el.querySelector('.provider-info__tooltip').classList.remove('tooltip-open')
 		})
 	})
 }
