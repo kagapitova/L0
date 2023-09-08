@@ -8,11 +8,9 @@ export function renderPage(){
 	    <h2 class="cart__header">Корзина</h2>
 	    		<div class="cart"></div>
 	        <div class="no-product__container"></div>
-	        <div class="info__container">
-	            <div class="delivery__container"></div>
-	            <div class="payment__container"></div>
-	            <div class="recipient-info__container"></div>
-	        </div>
+            <div class="delivery__container"></div>
+            <div class="payment__container"></div>
+            <div class="recipient-info__container"></div>
 			</div>
       <div class="total__container">
 	         <div class="total__card"></div>

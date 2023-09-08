@@ -210,7 +210,7 @@ export function renderCartItem(arr){
 
 export function cardSetLictenner(){
 	const like = document.querySelectorAll('.like');
-	const settingsContainer = document.querySelectorAll('.card-settings__container ');
+	const settingsContainer = document.querySelectorAll('.card-settings__container');
 	const provider = document.querySelectorAll('.item-provider');
 	const price = document.querySelectorAll('.item-price');
 	like.forEach(el=>{
