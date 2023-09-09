@@ -201,7 +201,7 @@
    color: rgba(255, 255, 255, 1);
 }
 
-.cart__item, .cart__item2 {
+.cart__item, .cart__item22 {
    background: rgba(245, 81, 35, 1);
    border-radius: 16px;
    height: 16px;
@@ -318,7 +318,7 @@
       position: relative;
    }
 
-   .cart__item2 {
+   .cart__item22 {
       right: -8px;
       top: -4px;
       font-size: 10px;

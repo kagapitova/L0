@@ -28,7 +28,29 @@ export function renderDeliveryBlock(){
 			</div>
 		</div>
 	</div>
-	<div class="delivery__note"><img src="images/svg/shipping.svg" alt="shipping"><p class="delivery__note-text">Обратная доставка товаров на склад при отказе —<p class="delivery__green-text">бесплатно</p><div class="note__tooltip">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div></p></div>
+	<div class="delivery__info-block-smal">
+			<div class="point__header">Пункт выдачи</div>
+			<div class="adress__container">
+					<div class="adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+					<div class="working-hours"><img src="images/svg/star.svg" alt="star"><p style="padding-left: 2px;">4.99</p><p style="padding-left: 8px;">Ежедневно с 10 до 21</p></div>
+			</div>
+			<div class="delivery-cost__header">Стоимость доставки</div>
+			<div class="cost__container">Бесплатно</div>
+			<div class="date-delivery__header1">5—6 февраля</div>
+			<div class="item-img__container1">
+		    <img class='delivery__img' src='images/png/tshort.png' alt="tshort">
+		    <div style="position: relative"><div class="cart__item1 cart__item">184</div><img class='delivery__img' src='images/png/phonecase.png' alt="phonecase">  </div>
+		 		<div style="position: relative"> <img class='delivery__img' src='images/png/pencils.png' alt="pencils">
+		    <div class="cart__item2 cart__item">2</div></div>
+			</div>
+			<div class="date-delivery__header2">7—8 февраля</div>
+			<div class="item-img__container2">
+			<div style="position: relative"><img class='delivery__img' src='images/png/phonecase.png' alt="phonecase"><div class="cart__item3 cart__item">16</div>
+</div>
+			</div>
+		</div>
+	</div>
+	<div class="delivery__note"><img class="green-simbol" src="images/svg/shipping.svg" alt="shipping"><p class="delivery__note-text">Обратная доставка товаров на склад при отказе —<a class="delivery__green-text">бесплатно</a><div class="note__tooltip">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div></p></div>
 </div>
 `;
 	

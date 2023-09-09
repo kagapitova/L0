@@ -107,7 +107,7 @@ export function renderMobilNavbar() {
 		</div>
 		<div class="mobil-svg__navigation cart-logo">
 			<img class="mobil__svg" src="images/svg/cart2.svg">
-			<div class="cart__item2">3</div>
+			<div class="cart__item22">3</div>
 		</div>
 		<div class="mobil-svg__navigation">
 			<img class="mobil__svg" src="images/svg/favorites.svg">

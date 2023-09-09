@@ -172,6 +172,9 @@
     opacity: 1;
 }
 
+.delivery__info-block-smal {
+    display: none;
+}
 
 @media screen and (max-width: 1025px) {
     .delivery__container {
@@ -189,5 +192,109 @@
 
     .delivery__note {
         margin-top: 9.4%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .delivery__info-block {
+        display: none;
+    }
+
+    .delivery__info-block-smal {
+        display: flex;
+        flex-direction: column;
+        padding-left: 6px;
+        padding-top: 8px;
+    }
+    .delivery__container {
+        width: 100%;
+        margin: 0;
+        margin-top: -21px;
+        height: 505px;
+    }
+
+    .delivery__main-header {
+        font-size: 19px;
+        letter-spacing: -0.2px;
+        padding-left: 3px;
+    }
+
+    .delivery__reset-btn {
+        padding-right: 16px;
+    }
+
+
+    .delivery__note {
+        width: 86%;
+        padding-left: 3%;
+    }
+
+    .delivery__note-text, .delivery__green-text {
+        padding-left: 10px;
+        line-height: 16px;
+    }
+
+    .item-img__container1 {
+        position: inherit;
+        padding-top: 12px;
+        gap: 8px;
+        display: inline-grid;
+        grid-template-columns: auto auto auto;
+        justify-items: start;
+        justify-content: start;
+    }
+
+    .item-img__container2 {
+        position: inherit;
+        padding-top: 12px;
+        gap: 8px;
+        display: inline-grid;
+        grid-template-columns: auto auto auto;
+        justify-items: start;
+        justify-content: start;
+    }
+
+    .cart__item1 {
+        left: 18px;
+        top: -9px;
+    }
+    .cart__item2 {
+        top: -9px;
+        left: 27px;
+    }
+
+    .cart__item3 {
+        left: 23px;
+        top: -4px;
+    }
+
+    .adress {
+        padding-top: 4px;
+        line-height: 23px;
+        letter-spacing: -0.005rem;
+    }
+
+    .delivery-cost__header {
+        margin-top: 3.5%;
+        letter-spacing: 0.01rem;
+    }
+
+    .cost__container {
+        padding-top: 4px;
+        letter-spacing: -0.01rem;
+    }
+
+    .date-delivery__header1 {
+        margin-top: 6%;
+    }
+
+
+    .date-delivery__header2 {
+        margin-top: 9%;
+    }
+
+    .green-simbol {
+        padding-left: 2px;
     }
 }
