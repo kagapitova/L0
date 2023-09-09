@@ -455,7 +455,7 @@
         text-align: center;
     }
 
-    .pensil-sizes {
+    .pensil-sizes, .white-box {
         display: block;
         position: relative;
         top: 57px;
@@ -467,6 +467,12 @@
         border-radius: 6px;
         font-size: 14px;
         text-align: center;
+    }
+
+    .white-box {
+        width: 22px;
+        top: -17px;
+        left: -79px;
     }
 
     .card-settings__container-unabel {

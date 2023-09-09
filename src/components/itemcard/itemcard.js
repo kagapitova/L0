@@ -300,6 +300,7 @@ export function renderUnCartItem(arr){
 <div class="cart-item__container cart-item__container-unabel unabel-170 unabel-marg2">
 	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel img-80"><img src=${item.image} alt="${item.alt}"></div>
 	<div class="pensil-sizes">56/54/52...</div>
+		<div class="white-box"></div>
 	<div class="card-text__container card-text__container-unabel">
 		<p class="cart-item__header cart-item__header-unabel">${item.name}</p>
 	</div>
