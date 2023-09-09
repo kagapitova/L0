@@ -64,7 +64,8 @@ export function renderCartItem(arr){
 	<label for="item__${index}" class="label-cart-item__container checkbox style-a">
 		  <input type="checkbox" id="item__${index}" name="item__${index}" checked/>
 		  <div class="checkbox__checkmark item__checkmark"></div>
-		  <div class="checkbox__body cart-item__img"><img src=${item.image} alt="${item.alt}"></div>
+		  <div class="checkbox__checkmark-size">56</div>
+		  <div class="checkbox__body cart-item__img main-img"><img src=${item.image} alt="${item.alt}"></div>
 	</label>
 	<div class="card-text__container">
 		<p class="cart-item__header">${item.name}</p>
@@ -93,8 +94,8 @@ export function renderCartItem(arr){
 	</div>
 		<p class="available-quantity">Осталось ${item.quantity} шт.</p>
 		<div class="item-tags">
-			<img src="images/svg/like.svg" alt="like" class="like">
-			<img src="images/svg/red.svg" alt="delete" class="delete">
+			<img class="tag" src="images/svg/like.svg" alt="like" class="like">
+			<img  class="tag" src="images/svg/red.svg" alt="delete" class="delete">
 		</div>
 	</div>
 	<div class="price-block">
@@ -113,7 +114,7 @@ export function renderCartItem(arr){
 	<label for="item__${index}" class="label-cart-item__container checkbox style-a">
 		  <input type="checkbox" id="item__${index}" name="item__${index}" checked/>
 		  <div class="checkbox__checkmark item__checkmark"></div>
-		  <div class="checkbox__body cart-item__img"><img src=${item.image} alt="${item.alt}"></div>
+		  <div class="checkbox__body cart-item__img main-img"><img src=${item.image} alt="${item.alt}"></div>
 	</label>
 	<div class="card-text__container">
 		<p class="cart-item__header">${item.name}</p>
@@ -133,15 +134,15 @@ export function renderCartItem(arr){
 		   </div>
 		</div>
 	</div>
-	<div class="card-settings__container">
+	<div class="card-settings__container second-setcontainer">
 		<div class="items-counter">
 		<button class="btn-item__minus">−</button>
 		<input  class="items-counter-input" type="text" min="1" max='${item.quantity}' value="1">
 		<button class="btn-item__plus"> +</button>
 	</div>
 		<div class="item-tags item-tags-pad">
-			<img src="images/svg/like.svg" alt="like" class="like">
-			<img src="images/svg/red.svg" alt="delete" class="delete">
+			<img class="tag" src="images/svg/like.svg" alt="like" class="like">
+			<img class="tag" src="images/svg/red.svg" alt="delete" class="delete">
 		</div>
 	</div>
 	<div class="price-block">
@@ -164,7 +165,7 @@ export function renderCartItem(arr){
 	<label for="item__${index}" class="label-cart-item__container checkbox style-a">
 		  <input type="checkbox" id="item__${index}" name="item__${index}" checked/>
 		  <div class="checkbox__checkmark item__checkmark"></div>
-		  <div class="checkbox__body cart-item__img"><img src=${item.image} alt="${item.alt}"></div>
+		  <div class="checkbox__body cart-item__img main-img"><img src=${item.image} alt="${item.alt}"></div>
 	</label>
 	<div class="card-text__container">
 		<p class="cart-item__header">${item.name}</p>
@@ -181,16 +182,16 @@ export function renderCartItem(arr){
 		   </div>
 		</div>
 	</div>
-	<div class="card-settings__container">
+	<div class="card-settings__container last-setcontainer">
 		<div class="items-counter">
 		<button class="btn-item__minus">−</button>
 		<input  class="items-counter-input" type="text" min="1"  max='${item.quantity}' value="1">
 		<button class="btn-item__plus"> +</button>
 		</div>
-		<p class="available-quantity">Осталось ${item.quantity} шт.</p>
-		<div class="item-tags">
-			<img src="images/svg/like.svg" alt="like" class="like">
-			<img src="images/svg/red.svg" alt="delete" class="delete">
+		<p class="available-quantity available-quantity-last">Осталось ${item.quantity} шт.</p>
+		<div class="item-tags last-tags">
+			<img class="tag" src="images/svg/like.svg" alt="like" class="like">
+			<img class="tag" src="images/svg/red.svg" alt="delete" class="delete">
 		</div>
 	</div>
 	<div class="price-block">

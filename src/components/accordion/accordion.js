@@ -8,7 +8,7 @@ const accHTML = `
 		<label for="all__items" class="label-all-items__container checkbox style-a">
 		  <input type="checkbox" id="all__items" name="all__items" checked/>
 		  <div class="checkbox__checkmark"></div>
-		  <div class="checkbox__body">Выбрать все</div>
+		  <div class="checkbox__body header-select-all">Выбрать все</div>
 		</label>
 	<button class="accordion"><img class="accordion__arrov" src="images/svg/arrov.svg" alt="arrov"></button>
 </div>

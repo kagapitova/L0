@@ -173,6 +173,15 @@ button.accordion-unable {
     button.accordion {
         padding: 22px 14px;
     }
+
+    .unable__accordion {
+        line-height: 34px;
+        margin-bottom: 9px;
+    }
+
+    button.accordion-unable {
+        padding: 27px 14px 11px;
+    }
 }
 
 
@@ -198,6 +207,18 @@ button.accordion-unable {
 
     button.accordion {
         padding: 13px 4px;
+    }
+
+    .header-select-all {
+        padding-left: 34px;
+    }
+
+    .checkbox.style-a {
+        padding-left: 0;
+    }
+
+    .label-cart-item__container {
+        padding-top: 5.15%;
     }
 }
 
