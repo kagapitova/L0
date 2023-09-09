@@ -262,16 +262,16 @@ export function renderUnCartItem(arr){
 	arr.forEach((item,index)=>{
 		if(item.hasOwnProperty('color') && item.hasOwnProperty('size')){
 			result += `
-<div class="cart-item__container cart-item__container-unabel">
-	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel"><img src=${item.image} alt="${item.alt}"></div>
-	<div class="card-text__container">
+<div class="cart-item__container cart-item__container-unabel unabel-170">
+	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel img-80"><img src=${item.image} alt="${item.alt}"></div>
+	<div class="card-text__container card-text__container-unabel">
 		<p class="cart-item__header cart-item__header-unabel">${item.name}</p>
 		<div class="item-size-color__container">
 			<p class="item-color">Цвет: ${item.color}</p>
 			<p class="item-size">Размер: ${item.size}</p>
 		</div>
 	</div>
-	<div class="card-settings__container card-settings__container-unabel">
+	<div class="card-settings__container card-settings__container-unabel flex-end">
 	<div class="item-tags">
 			<img src="images/svg/like.svg" alt="like" class="like">
 			<img src="images/svg/red.svg" alt="delete" class="delete">
@@ -280,15 +280,15 @@ export function renderUnCartItem(arr){
 </div>
 		`} else if (item.hasOwnProperty('color') && !item.hasOwnProperty('size')){
 			result += `
-<div class="cart-item__container cart-item__container-unabel">
-	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel"><img src=${item.image} alt="${item.alt}"></div>
-	<div class="card-text__container">
+<div class="cart-item__container cart-item__container-unabel unabel-170 unabel-marg">
+	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel img-80"><img src=${item.image} alt="${item.alt}"></div>
+	<div class="card-text__container card-text__container-unabel">
 		<p class="cart-item__header cart-item__header-unabel">${item.name}</p>
 		<div class="item-size-color__container">
 			<p class="item-color">Цвет: ${item.color}</p>
 		</div>
 	</div>
-	<div class="card-settings__container card-settings__container-unabel">
+	<div class="card-settings__container card-settings__container-unabel flex-end">
 	<div class="item-tags">
 			<img src="images/svg/like.svg" alt="like" class="like">
 			<img src="images/svg/red.svg" alt="delete" class="delete">
@@ -297,12 +297,13 @@ export function renderUnCartItem(arr){
 </div>
 		`} else if (!item.hasOwnProperty('color') && !item.hasOwnProperty('size')){
 			result += `
-<div class="cart-item__container cart-item__container-unabel">
-	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel"><img src=${item.image} alt="${item.alt}"></div>
-	<div class="card-text__container">
+<div class="cart-item__container cart-item__container-unabel unabel-170 unabel-marg2">
+	<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel img-80"><img src=${item.image} alt="${item.alt}"></div>
+	<div class="pensil-sizes">56/54/52...</div>
+	<div class="card-text__container card-text__container-unabel">
 		<p class="cart-item__header cart-item__header-unabel">${item.name}</p>
 	</div>
-	<div class="card-settings__container card-settings__container-unabel">
+	<div class="card-settings__container card-settings__container-unabel flex-end">
 	<div class="item-tags">
 			<img src="images/svg/like.svg" alt="like" class="like">
 			<img src="images/svg/red.svg" alt="delete" class="delete">

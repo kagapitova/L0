@@ -15,7 +15,7 @@ const accHTML = `
 <div class="accordion-cart__content">
 	${carthtml}
 </div>
-<div class="checkbox-accordion-cart__container">
+<div class="checkbox-accordion-cart__container checkbox-accordion-cart__container-unabel">
 		<label for="all__items" class="label-all-items__container checkbox style-a unable">
 		  <div class="unable unable__accordion">Отсутствуют · 3 товара</div>
 		</label>

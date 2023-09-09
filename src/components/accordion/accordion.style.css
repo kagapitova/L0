@@ -220,5 +220,43 @@ button.accordion-unable {
     .label-cart-item__container {
         padding-top: 5.15%;
     }
+
+    .unable__accordion {
+        padding-top: 10px;
+    }
+
+    .checkbox-accordion-cart__container-unabel {
+        margin-left: 4.6%;
+        padding-bottom: 3px;
+        width: 93%;
+        padding-top: 4px;
+    }
+
+    button.accordion-unable {
+        padding: 15px 1px 10px;
+    }
+
+    .checkbox-accordion-cart__container-unabel {
+        gap: 0;
+        grid-template-rows: 167px 167px 167px;
+        padding-right: 13px;
+    }
+
+    .unable__img {
+        filter: grayscale(100%);
+        width: 95%;
+    }
+
+    .cart-item__img {
+        width: 80px;
+    }
+
+    .cart-item__container-unabel {
+        height: 169px;
+    }
+    .cart-item__img-unabel {
+        margin-top: 11px;
+        width: 80px;
+    }
 }
 
