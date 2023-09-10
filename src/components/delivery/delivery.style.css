@@ -178,9 +178,7 @@
 
 @media screen and (max-width: 1025px) {
     .delivery__container {
-        margin-top: 4%;
         width: 94.4%;
-        margin-left: 2.4%;
         padding-top: 2.2%;
         padding-left: 3.6%;
         background-color: #FFFFFF;
@@ -192,6 +190,12 @@
 
     .delivery__note {
         margin-top: 9.4%;
+    }
+
+    .delivery__main-header {
+        font-size: 22px;
+        letter-spacing: 0.2px;
+        padding-left: 0;
     }
 }
 
@@ -211,7 +215,8 @@
         width: 100%;
         margin: 0;
         margin-top: -21px;
-        height: 505px;
+        height: 100%;
+        padding-bottom: 23px;
     }
 
     .delivery__main-header {
@@ -291,7 +296,7 @@
 
 
     .date-delivery__header2 {
-        margin-top: 9%;
+        margin-top: 28px;
     }
 
     .green-simbol {
