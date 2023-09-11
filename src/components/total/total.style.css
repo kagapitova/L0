@@ -4,9 +4,6 @@
     position: sticky;
     top: 10px;
     width: 100%;
-    max-height: 604px;
-    min-height: 549px;
-    height: 100%;
     padding: 16px 24px 24px 24px;
     box-sizing: border-box;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.3);
@@ -242,4 +239,142 @@
 
 .total__payment {
     padding-top: 19px;
+}
+
+.total__accept {
+    font-size: 13px;
+    line-height: 16px;
+    font-family: SegoeUI,Arial,sans-serif;
+    letter-spacing: -0.006rem;
+    font-weight: 400;
+    padding-top: 4px;
+}
+
+a.total__accept {
+    font-family: SegoeUI,Arial,sans-serif;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    color: rgba(0, 0, 0, 1);
+    padding-bottom: 1px;
+    text-decoration: none;
+}
+
+.total__accept-img {
+    padding-right: 8px;
+}
+
+.total__accept-info {
+    display: flex;
+    padding-top: 8px;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .total__card {
+        padding: 16px 27px 22px 21px;
+    }
+
+    .total__container {
+        width: 29.45%;
+    }
+
+    .total__accept-img {
+        margin-bottom: 18px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 1023px) {
+
+
+
+    .total__header, .total__delivery-header {
+        font-size: 16px;
+    }
+
+    .total__text {
+        font-size: 13px;
+    }
+
+}
+
+
+@media screen and (max-width: 980px) {
+
+    .total__delivery-date, .total__delivery-adress,
+    .total__delivery-header, .total__delivery-reset-btn,
+    .total__delivery-header, .bank-cart__info-total {
+        display: none;
+    }
+
+    .total__card {
+        box-shadow: unset;
+        background-color: unset;
+    }
+
+    .total__card {
+        padding: 7px 17px 22px 16px;
+    }
+
+    .total__header, .total__delivery-header {
+        font-size: 20px;
+    }
+
+    .total__text {
+        font-size: 15px;
+        margin-top: 4px;
+    }
+
+    .total__delivery {
+        padding-top: 7px;
+    }
+
+    .total__payment {
+        padding-top: 3px;
+    }
+
+    .total__accept-img {
+        margin-bottom: unset;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .total__container {
+        width: 66%;
+        margin: auto 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .total__delivery-date, .total__delivery-adress,
+    .total__delivery-header, .total__delivery-reset-btn,
+    .total__delivery-header, .bank-cart__info-total {
+        display: none;
+    }
+
+    .total__card {
+        box-shadow: unset;
+        background-color: unset;
+        margin-bottom: -30px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .total__container {
+        width: 100%;
+        margin: auto 0;
+    }
+
+    .delivery__green-text-total {
+        padding-left: 7px;
+    }
 }

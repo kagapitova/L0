@@ -15,7 +15,7 @@ export function renderPage(){
       <div class="total__container">
 			</div>
 		</section>
-    <footer class="footer__container"></footer>
+    <footer class="footer__container"><div class="footer-copy">© 2022  ООО «Товары и точка»</div></footer>
 		<div class="footer__mobile_nav"></div>
 </div>
 `;

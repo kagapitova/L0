@@ -53,8 +53,11 @@ export function renderTotalBlock() {
 	    <div class="total__pay-info">Спишем оплату с карты при получении</div>
   	</div>
   <button class="total__btn">Заказать</button>
-  <div class="total__accept"> </div>
-</div>
+  <div class="total__accept-info">
+	  <img class="total__accept-img" src="images/svg/accept.svg" alt="accept">
+	  <div class="total__accept" href="https://www.wildberries.ru/services/pravila-polzovaniya-torgovoy-ploshchadkoy">Соглашаюсь с правилами  <a class="total__accept" href="https://www.wildberries.ru/services/pravila-polzovaniya-torgovoy-ploshchadkoy">пользования торговой площадкой </a> и  <a class="total__accept" href="https://www.wildberries.ru/services/vozvrat-tovara">возврата</a></div>
+	</div>
+  </div>
 	`;
 	
 	const totalContainer = document.querySelector('.total__container');
