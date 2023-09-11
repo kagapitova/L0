@@ -6,10 +6,11 @@
 }
 
 .main {
-    display: block;
+    display: flex;
     background-color: rgba(246, 246, 250, 1);
     border-radius: 24px;
     padding-bottom: 49px;
+    flex-direction: row;
 }
 
 .navigation {
@@ -34,4 +35,10 @@
 
 .cart__container {
     width: 66%;
+}
+
+.total__container {
+    margin: 0 auto;
+    margin-top: 24px;
+    width: 30.55%;
 }

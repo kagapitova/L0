@@ -13,7 +13,6 @@ export function renderPage(){
             <div class="recipient-info__container"></div>
 			</div>
       <div class="total__container">
-	         <div class="total__card"></div>
 			</div>
 		</section>
     <footer class="footer__container"></footer>

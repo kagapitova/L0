@@ -1,0 +1,245 @@
+
+.total__card {
+    margin-top: -2px;
+    position: sticky;
+    top: 10px;
+    width: 100%;
+    max-height: 604px;
+    min-height: 549px;
+    height: 100%;
+    padding: 16px 24px 24px 24px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.3);
+    background-color: #FFFFFF;
+    border-radius: 16px;
+}
+
+.total__header, .total__delivery-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+.total__delivery {
+    padding-top: 21px;
+}
+
+.total__delivery-header {
+    font-size: 16px;
+}
+
+.total__delivery-reset-btn {
+    width: 20px;
+}
+
+.total__delivery-date {
+    color: rgba(203, 17, 171, 1);
+    border-bottom-style: dashed;
+    border-width: 1px;
+    width: 47px;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.total__delivery-adress {
+    font-size: 13px;
+    line-height: 16px;
+    font-family: SegoeUI,Arial,sans-serif;
+    letter-spacing: -0.01rem;
+}
+
+.delivery__note-total {
+    display: flex;
+    line-height: 17px;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    font-family: SegoeUI,Arial,sans-serif;
+}
+
+.delivery__note-text-total {
+    padding-left: 8px;
+    padding-top: 3px;
+}
+
+.note__tooltip-total {
+    width: 300px;
+    position: absolute;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    font-size: 13px;
+    left: 60px;
+    top: 277px;
+    line-height: 16px;
+    margin: 0;
+    padding: 10px 16px 14px;
+}
+
+.note__tooltip-open-total {
+    opacity: 1;
+}
+
+.bank-cart__info-total {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: -0.02rem;
+}
+
+.checkbox.style-a input:checked ~ .checkbox__checkmark-total {
+    background-color: #cb11ab;
+    border: none;
+}
+
+.checkbox.style-a:hover input:checked ~ .checkbox__checkmark-total {
+    background-color: #cb11ab;
+    border: none;
+}
+
+.checkbox.style-a input:checked ~ .checkbox__checkmark-total:after {
+    opacity: 1;
+}
+
+
+.checkbox.style-a .checkbox__checkmark-total {
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    height: 22px;
+    width: 22px;
+    background: #F6F6FA;
+    border: solid 2px #CCCCCC;
+    transition: background-color 0.25s ease;
+    border-radius: 6px;
+}
+
+.checkbox.style-a .checkbox__checkmark-total:after {
+    content: '';
+    width: 6px;
+    height: 12px;
+    top: 3px;
+    left: 8px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.checkbox.style-a .checkbox__body-total {
+    color: #333;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    padding-bottom: 2px;
+}
+
+.checkbox.style-a .checkbox__checkmark-total:after {
+    content: '';
+    width: 6px;
+    height: 12px;
+    top: 3px;
+    left: 8px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.checkbox.style-a:hover input ~ .checkbox__checkmark-total {
+    border: solid 1px #CCCCCC;
+}
+
+.checkbox.style-a .checkbox__checkmark-total {
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    height: 22px;
+    width: 22px;
+    background-color: #fff;
+    border: 1px solid #d3d4dd;
+    transition: background-color 0.25s ease;
+    border-radius: 6px;
+}
+
+.header-pay-all {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+
+.checkbox.style-a.total {
+    display: inline-block;
+    position: relative;
+    padding-left: 31px;
+    padding-top: 7px;
+    cursor: pointer;
+    user-select: none;
+    letter-spacing: -0.01rem;
+}
+
+.delivery__green-text-total {
+    position: inherit;
+    color: rgba(12, 180, 119, 1);
+    border-bottom-style: dashed;
+    border-width: 1px;
+}
+
+.total__delivery-decline {
+    margin-top: 7px;
+    padding: 8px 8px 12px 6px;
+    background: #F6F6FA;
+    border-radius: 8px;
+    font-family: SegoeUI,Arial,sans-serif;
+}
+
+.to-text {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    line-height: 24px;
+    font-family: SegoeUI,Arial,sans-serif;
+    letter-spacing: 0.01rem;
+}
+
+.total__pay-info {
+    font-family: SegoeUI,Arial,sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    padding-top: 9px;
+}
+
+.total__btn {
+    width: 100%;
+    margin-top: 23px;
+    color: #fff;
+    height: 44px;
+    font-weight: 700;
+    background: #CB11AB;
+    border-radius: 8px;
+    font-family: SegoeUI,Arial,sans-serif;
+    letter-spacing: -0.03rem;
+}
+
+.total__text {
+    margin-top: 8px;
+    letter-spacing: 0;
+    font-size: 15px;
+}
+
+.total__payment {
+    padding-top: 19px;
+}

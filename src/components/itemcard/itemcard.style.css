@@ -20,7 +20,7 @@
 
 .cart-item__header {
     width: 251px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: SegoeUI,Arial,sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -33,7 +33,7 @@
 }
 
 .item-size-color__container {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: SegoeUI,Arial,sans-serif;
     margin-bottom: 11px;
     height: 21px;
     display: flex;
