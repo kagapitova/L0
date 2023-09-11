@@ -3,9 +3,9 @@
 }
 
 .delivery__container {
+    width: 96.6%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 4%;
-    width: 96.5%;
     margin-left: 2.4%;
     padding-top: 2%;
     padding-left: 2.9%;
@@ -197,6 +197,16 @@
         letter-spacing: 0.2px;
         padding-left: 0;
     }
+    .delivery__reset-btn {
+        padding-right: 24px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgba(203, 17, 171, 1);
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 24px;
+        padding-top: 4px;
+        letter-spacing: 0.01rem;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -228,7 +238,6 @@
     .delivery__reset-btn {
         padding-right: 16px;
     }
-
 
     .delivery__note {
         width: 86%;
@@ -275,9 +284,9 @@
     }
 
     .adress {
-        padding-top: 4px;
+        padding-top: 2px;
         line-height: 23px;
-        letter-spacing: -0.005rem;
+        letter-spacing: 0.001rem;
     }
 
     .delivery-cost__header {

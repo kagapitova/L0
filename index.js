@@ -5,6 +5,7 @@ import {renderCartAccordion} from "./src/components/accordion/accordion";
 import {cardSetLictenner} from "./src/components/itemcard/itemcard";
 import {renderDeliveryBlock} from "./src/components/delivery/delivery";
 import {renderPaymantBlock} from "./src/components/paymants/paymants";
+import {renderRecipientForm} from "./src/components/recipient/recipient";
 
 renderPage();
 renderNavigation();
@@ -14,3 +15,4 @@ renderCartAccordion();
 cardSetLictenner();
 renderDeliveryBlock();
 renderPaymantBlock();
+renderRecipientForm();
