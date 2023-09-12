@@ -1,30 +1,31 @@
 import style from './accordion.style.css'
-import {itemArr, renderCartItem, renderUnCartItem} from "../itemcard/itemcard";
-export function renderCartAccordion(){
-const carthtml = renderCartItem(itemArr);
-const cartUnhtml = renderUnCartItem(itemArr);
-const accHTML = `
-<div class="checkbox-accordion-cart__container">
+import {itemArr, renderCartItem, renderUnCartItem, cardSetListenner} from "../itemcard/itemcard";
+import { state } from "../../state";
+export function renderCartAccordion() {
+	const carthtml = renderCartItem(itemArr);
+	const cartUnhtml = renderUnCartItem(itemArr);
+	const accordionOpenClass = state.isAccordionOpen ? 'is-open' : '';
+	const accHTML = `
+	<div class="checkbox-accordion-cart__container">
 		<label for="all__items" class="label-all-items__container checkbox style-a">
-		  <input type="checkbox" id="all__items" name="all__items" checked/>
-		  <div class="checkbox__checkmark"></div>
-		  <div class="checkbox__body header-select-all">Выбрать все</div>
+			<input type="checkbox" id="all__items" name="all__items" checked/>
+			<div class="checkbox__checkmark"></div>
+			<div class="checkbox__body header-select-all">Выбрать все</div>
 		</label>
-	<button class="accordion"><img class="accordion__arrov" src="images/svg/arrov.svg" alt="arrov"></button>
-</div>
-<div class="accordion-cart__content">
-	${carthtml}
-</div>
-<div class="checkbox-accordion-cart__container checkbox-accordion-cart__container-unabel">
+		<button class="accordion"><img class="accordion__arrov" src="images/svg/arrov.svg" alt="arrov"></button>
+	</div>
+	<div class="accordion-cart__content ${accordionOpenClass}">
+		${carthtml}
+	</div>
+	<div class="checkbox-accordion-cart__container checkbox-accordion-cart__container-unabel">
 		<label for="all__items" class="label-all-items__container checkbox style-a unable">
-		  <div class="unable unable__accordion">Отсутствуют · 3 товара</div>
+			<div class="unable unable__accordion">Отсутствуют · 3 товара</div>
 		</label>
-	<button class="accordion-unable"><img class="accordion__arrov-unable" src="images/svg/arrov.svg" alt="arrov"></button>
-</div>
-<div class="accordion-cart__content-unable">
-	${cartUnhtml}
-</div>
-
+		<button class="accordion-unable"><img class="accordion__arrov-unable" src="images/svg/arrov.svg" alt="arrov"></button>
+	</div>
+	<div class="accordion-cart__content-unable">
+		${cartUnhtml}
+	</div>
 `
 	const cartAccPlace = document.querySelector('.cart');
 	cartAccPlace.innerHTML = accHTML;
@@ -36,6 +37,7 @@ const accHTML = `
 	const cartContent = document.querySelector('.accordion-cart__content');
 	accordionBtns.forEach((accordion) => {
 		accordion.onclick = function () {
+			state.isAccordionOpen = !state.isAccordionOpen
 			cartContent.classList.toggle("is-open");
 			accArrov.classList.toggle("accordion__arrov-open")
 			let content = this.nextElementSibling;
@@ -58,4 +60,5 @@ const accHTML = `
 			}
 		};
 	});
+	cardSetListenner();
 }

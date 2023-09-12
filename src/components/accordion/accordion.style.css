@@ -176,16 +176,25 @@ button.accordion-unable {
 
     .unable__accordion {
         line-height: 34px;
-        margin-bottom: 9px;
+        margin-bottom: 8px;
+        padding-top: 33px;
     }
 
     button.accordion-unable {
-        padding: 27px 14px 11px;
+        padding: 35px 14px 11px;
     }
 }
 
 
 @media screen and (max-width: 800px) {
+
+    .accordion-cart__content-unable.is-open {
+        gap: 0;
+        display: grid;
+        width: 99%;
+        max-height: none;
+        transition: max-height 0.2s ease-in-out;
+    }
 
     .cart__container {
         width: 100%;
