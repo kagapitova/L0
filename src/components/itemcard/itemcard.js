@@ -1,7 +1,8 @@
 import styles from './itemcard.style.css'
-import { addCartItem, changeCartItemCount, removeCartItem } from "../../common/calculator";
-import { getCartItem } from "../../state";
-export const itemArr = [
+import { addCartItem, calculate, changeCartItemCount, removeCartItem } from "../../common/calculator";
+import { getCartItem, state } from "../../state";
+import { renderPrice } from "../../common/functions";
+export let itemArr = [
 	{
 		id: 1,
 		image: 'images/png/tshort.png',
@@ -131,7 +132,7 @@ export function getCard(item, index) {
 		<p class="available-quantity">Осталось ${item.quantity - product.count} шт.</p>
 		<div class="item-tags">
 			<img class="tag" src="images/svg/like.svg" alt="like" class="like">
-			<img  class="tag" src="images/svg/red.svg" alt="delete" class="delete">
+			<img class="tag delete" src="images/svg/red.svg" data-id="${item.id}" alt="delete">
 		</div>
 	</div>
 	<div class="price-block">
@@ -170,40 +171,41 @@ export function cardSetListenner(){
 	const minusBtn = document.querySelectorAll('.btn-item__minus');
 	const plusBtn = document.querySelectorAll('.btn-item__plus');
 	const countInput = document.querySelectorAll('.items-counter-input');
-	like.forEach(el=>{
+	const deleteBtn = document.querySelectorAll('.delete');
+	like.forEach(el => {
 		el.addEventListener('click',()=>{
 			el.classList.toggle('like-red')
 		})
 	})
-	settingsContainer.forEach(el=>{
+	settingsContainer.forEach(el => {
 		el.addEventListener('mouseover',()=>{
 			el.querySelector('.item-tags').classList.add('item-tags-visible')
 			el.querySelector('.available-quantity').classList.add('item-tags-visible')
 		})
 	})
-	settingsContainer.forEach(el=>{
+	settingsContainer.forEach(el => {
 		el.addEventListener('mouseout',()=>{
 			el.querySelector('.item-tags').classList.remove('item-tags-visible')
 			el.querySelector('.available-quantity').classList.remove('item-tags-visible')
 		})
 	})
-	provider.forEach(el=>{
+	provider.forEach(el => {
 		el.addEventListener('mouseover',()=>{
 			el.querySelector('.provider-info__tooltip').classList.add('tooltip-open')
 		})
 	})
-	provider.forEach(el=>{
+	provider.forEach(el => {
 		el.addEventListener('mouseout',()=>{
 			el.querySelector('.provider-info__tooltip').classList.remove('tooltip-open')
 		})
 	})
-	price.forEach(el=>{
+	price.forEach(el => {
 		el.addEventListener('mouseover',()=>{
 			const tooltip = el.nextElementSibling;
 			tooltip.classList.add('tooltip-open')
 		})
 	})
-	price.forEach(el=>{
+	price.forEach(el => {
 		el.addEventListener('mouseout',()=>{
 			const tooltip = el.nextElementSibling;
 			tooltip.classList.remove('tooltip-open')
@@ -225,6 +227,12 @@ export function cardSetListenner(){
 		el.addEventListener('change', (event) => {
 			const product = findProductById(event.target.dataset.id)
 			changeCartItemCount(product, event.target.value);
+		})
+	})
+	deleteBtn.forEach(el => {
+		el.addEventListener('click', (event) => {
+			const product = findProductById(event.target.dataset.id)
+			removeProduct(product);
 		})
 	})
 }
@@ -249,7 +257,7 @@ export function getUnCard(item) {
 		<div class="card-settings__container card-settings__container-unabel flex-end">
 			<div class="item-tags">
 				<img src="images/svg/like.svg" alt="like" class="like">
-				<img src="images/svg/red.svg" alt="delete" class="delete">
+				<img src="images/svg/red.svg" data-id="${item.id}" alt="delete" class="delete">
 			</div>
 		</div>
 	</div>
@@ -263,4 +271,10 @@ export function renderUnCartItem(arr){
 		result += getUnCard(item)
 	})
 	return result
+}
+
+export function removeProduct(product) {
+	state.cart = state.cart.filter(cartItem => cartItem.id !== product.id);
+	itemArr = itemArr.filter(item => item.id !== product.id);
+	calculate();
 }

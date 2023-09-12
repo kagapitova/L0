@@ -2,6 +2,7 @@ import { getCartItem, state } from "../state";
 import { findProductById } from "../components/itemcard/itemcard";
 import { renderTotalBlock } from "../components/total/total";
 import { renderCartAccordion } from "../components/accordion/accordion";
+import { renderNavigation } from "../components/navigation/navigation";
 
 export function addCartItem(item) {
     let cartItem = getCartItem(item.id)
@@ -53,4 +54,5 @@ export function calculate() {
     state.totalPrice = state.totalPriceNoSale - state.totalSale;
     renderTotalBlock();
     renderCartAccordion();
+    renderNavigation();
 }

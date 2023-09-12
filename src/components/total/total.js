@@ -1,24 +1,25 @@
 import styles from './total.style.css'
 import { state } from "../../state";
+import { renderPrice } from "../../common/functions";
 export function renderTotalBlock() {
 	let result = `
 <div class="total__card">
  	<div class="total__header">
  		<h2 class="total__header-h2">Итого</h2>
-    <div class="total__header-sum">${state.totalPrice} сом</div>
+    <div class="total__header-sum">${renderPrice(state.totalPrice)} сом</div>
  	</div>
  	<div class="total__text">
  		<div class="total__text-amount to-text">
-	    <div class="total__text-amount-left">${state.totalCount} товара</div>
-	    <div class="total__text-amount-right">${state.totalPriceNoSale} сом</div>
+	    	<div class="total__text-amount-left">${renderPrice(state.totalCount)} товара</div>
+	    	<div class="total__text-amount-right">${renderPrice(state.totalPriceNoSale)} сом</div>
 		</div>
 		<div class="total__text-sale to-text">
-	    <div class="total__text-sale-left">Скидка</div>
-	    <div class="total__text-sale-right">- ${state.totalSale} сом</div>
+	    	<div class="total__text-sale-left">Скидка</div>
+	    	<div class="total__text-sale-right">- ${renderPrice(state.totalSale)} сом</div>
 		</div>
-			<div class="total__text-delivery to-text">
-	    <div class="total__text-delivery-left">Доставка</div>
-	    <div class="total__text-delivery-right">Бесплатно</div>
+		<div class="total__text-delivery to-text">
+	    	<div class="total__text-delivery-left">Доставка</div>
+	    	<div class="total__text-delivery-right">Бесплатно</div>
 		</div>
 	</div>
  	<div class="total__delivery">
@@ -55,7 +56,7 @@ export function renderTotalBlock() {
   <button class="total__btn">Заказать</button>
   <div class="total__accept-info">
 	  <img class="total__accept-img" src="images/svg/accept.svg" alt="accept">
-	  <div class="total__accept">Соглашаюсь с правилами  <a class="total__accept" href="https://www.wildberries.ru/services/pravila-polzovaniya-torgovoy-ploshchadkoy">пользования торговой площадкой </a> и  <a class="total__accept" href="https://www.wildberries.ru/services/vozvrat-tovara">возврата</a></div>
+	  <div class="total__accept">Соглашаюсь с правилами  <a class="total__accept" href="https://www.wildberries.ru/services/pravila-polzovaniya-torgovoy-ploshchadkoy">пользования торговой площадкой </a> и  <a class="total__accept" href="https://www.wildberries.ru/services/vozvrat-tovara">возврата</a></div>
 	</div>
   </div>
 	`;

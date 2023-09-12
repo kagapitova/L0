@@ -5,6 +5,7 @@ export function renderCartAccordion() {
 	const carthtml = renderCartItem(itemArr);
 	const cartUnhtml = renderUnCartItem(itemArr);
 	const accordionOpenClass = state.isAccordionOpen ? 'is-open' : '';
+	const unAccordionOpenClass = state.isUnAccordionOpen ? 'is-open' : '';
 	const accHTML = `
 	<div class="checkbox-accordion-cart__container">
 		<label for="all__items" class="label-all-items__container checkbox style-a">
@@ -19,11 +20,11 @@ export function renderCartAccordion() {
 	</div>
 	<div class="checkbox-accordion-cart__container checkbox-accordion-cart__container-unabel">
 		<label for="all__items" class="label-all-items__container checkbox style-a unable">
-			<div class="unable unable__accordion">Отсутствуют · 3 товара</div>
+			<div class="unable unable__accordion">Отсутствуют · ${state.cart.length} товара</div>
 		</label>
 		<button class="accordion-unable"><img class="accordion__arrov-unable" src="images/svg/arrov.svg" alt="arrov"></button>
 	</div>
-	<div class="accordion-cart__content-unable">
+	<div class="accordion-cart__content-unable ${unAccordionOpenClass}">
 		${cartUnhtml}
 	</div>
 `
@@ -50,6 +51,7 @@ export function renderCartAccordion() {
 	});
 	accUnBtn.forEach((accordion) => {
 		accordion.onclick = function () {
+			state.isUnAccordionOpen = !state.isUnAccordionOpen
 			cartUnContent.classList.toggle("is-open");
 			accUnArrov.classList.toggle("accordion__arrov-unable-open")
 			let content = this.nextElementSibling;
