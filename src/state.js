@@ -11,6 +11,7 @@ export const state = {
     isAccordionOpen: false,
     isUnAccordionOpen: false,
     checkAll: true,
+    bankCardId: 1
 }
 
 export const getCartItem = id => state.cart.filter(cartItem => cartItem.id === parseInt(id)).shift()

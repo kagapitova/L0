@@ -2,7 +2,9 @@ import styles from './total.style.css'
 import { state } from "../../state";
 import { renderPrice } from "../../common/functions";
 import { checkFormInputs } from "../../components/recipient/recipient";
+import { getBankCardById } from "../../components/popups/popupcards";
 export function renderTotalBlock() {
+	const bankCard = getBankCardById(state.bankCardId);
 	let result = `
 <div class="total__card">
  	<div class="total__header">
@@ -43,8 +45,8 @@ export function renderTotalBlock() {
   <div class="total__payment">
    <div class="total__delivery-header" style="letter-spacing: -0.03em">Оплата картой <button class="total__cart-reset-btn"><img src="images/svg/reset.svg" alt="reset"></button></div>
    <div class="bank-cart__info-total">
-		<img src="images/svg/bankcard.svg" alt="cart">
-		<div class="cart-number">1234 56•• •••• 1234</div>
+		<img src="${bankCard.img}" alt="cart">
+		<div class="cart-number">${bankCard.number}</div>
 		</div>
 		<div class="total__delivery-decline">
 			<label for="total__items" class="label-total-items__container checkbox style-a total">

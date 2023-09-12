@@ -2,7 +2,11 @@ import { getCartItem, state } from "../state";
 import { findProductById } from "../components/itemcard/itemcard";
 import { renderTotalBlock } from "../components/total/total";
 import { renderCartAccordion } from "../components/accordion/accordion";
-import { renderMobilNavbar, renderNavigation } from "../components/navigation/navigation";
+import { renderMobilNavbar, renderNavigation, setMenuToggler } from "../components/navigation/navigation";
+import { setModals } from "../common/functions";
+import { renderCartPopup } from "../components/popups/popupcards";
+import { renderDeliveryPopup } from "../components/popups/popupdelivery";
+import { renderPaymantBlock } from "../components/paymants/paymants";
 
 export function addCartItem(product) {
     const cartItem = getCartItem(product.id)
@@ -58,4 +62,9 @@ export function calculate() {
     renderCartAccordion();
     renderNavigation();
     renderMobilNavbar();
+    renderDeliveryPopup();
+    renderPaymantBlock();
+    renderCartPopup();
+    setModals();
+    setMenuToggler();
 }

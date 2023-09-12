@@ -3,22 +3,13 @@ import {renderMobilNavbar, renderNavigation, setMenuToggler} from "./src/compone
 import styles from './style.css';
 import {renderCartAccordion} from "./src/components/accordion/accordion";
 import {renderDeliveryBlock} from "./src/components/delivery/delivery";
-import {renderPaymantBlock} from "./src/components/paymants/paymants";
 import {renderRecipientForm} from "./src/components/recipient/recipient";
 import { calculate } from "./src/common/calculator";
-import {renderDeliveryPopup} from "./src/components/popups/popupdelivery";
-import {renderCartPopup} from "./src/components/popups/popupcards";
-import {setModals} from "./src/common/functions";
 
 renderPage();
 renderNavigation();
 renderMobilNavbar();
 renderCartAccordion();
 renderDeliveryBlock();
-renderPaymantBlock();
 renderRecipientForm();
 calculate();
-renderDeliveryPopup();
-renderCartPopup();
-setMenuToggler();
-setModals();
