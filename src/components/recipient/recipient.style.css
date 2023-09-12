@@ -95,6 +95,14 @@
     display: none;
 }
 
+.error-active {
+    display: block;
+    color: red;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.005rem;
+}
+
 .recipient-inn__helper {
     display: block;
     font-size: 12px;

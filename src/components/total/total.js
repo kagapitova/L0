@@ -1,6 +1,7 @@
 import styles from './total.style.css'
 import { state } from "../../state";
 import { renderPrice } from "../../common/functions";
+import { checkFormInputs } from "../../components/recipient/recipient";
 export function renderTotalBlock() {
 	let result = `
 <div class="total__card">
@@ -73,5 +74,10 @@ export function renderTotalBlock() {
 	
 	nofee.addEventListener('mouseout',()=>{
 		tooltip.classList.remove('note__tooltip-open-total')
+	})
+	
+	const orderBtn = document.querySelector('.total__btn');
+	orderBtn.addEventListener('click', () => {
+		checkFormInputs();
 	})
 }
