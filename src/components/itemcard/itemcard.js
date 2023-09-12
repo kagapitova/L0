@@ -1,7 +1,6 @@
 import styles from './itemcard.style.css'
-import { addCartItem, calculate, changeCartItemCount, removeCartItem } from "../../common/calculator";
+import { addCartItem, calculate, changeCartItemCount, removeCartItem, toggleCartItem } from "../../common/calculator";
 import { getCartItem, state } from "../../state";
-import { renderPrice } from "../../common/functions";
 export let itemArr = [
 	{
 		id: 1,
@@ -98,14 +97,15 @@ function getColorAndSize(item) {
 export function getCard(item, index) {
 	const colorSizeHtml = getColorAndSize(item);
 	const checkMarkSize = getCheckMarkSize(item);
-	const product = getCartItem(item.id)
+	const cartItem = getCartItem(item.id)
+	const checked = cartItem.enabled ? 'checked' : '';
 	return `
 <div class="cart-item__container">
-	<label for="item__${index}" class="label-cart-item__container checkbox style-a">
-		<input type="checkbox" id="item__${index}" name="item__${index}" checked/>
-		<div class="checkbox__checkmark item__checkmark"></div>
+	<label data-id="${item.id}" for="item__${index}" class="label-cart-item__container checkbox checkbox-product style-a">
+		<input data-id="${item.id}" type="checkbox" id="item__${index}" name="item__${index}" ${checked}/>
+		<div data-id="${item.id}" class="checkbox__checkmark item__checkmark"></div>
 		${checkMarkSize}
-		<div class="checkbox__body cart-item__img main-img"><img src=${item.image} alt="${item.alt}"></div>
+		<div data-id="${item.id}" class="checkbox__body cart-item__img main-img"><img src=${item.image} alt="${item.alt}"></div>
 	</label>
 	<div class="card-text__container">
 		<p class="cart-item__header">${item.name}</p>
@@ -126,10 +126,10 @@ export function getCard(item, index) {
 	<div class="card-settings__container">
 		<div class="items-counter">
 			<button class="btn-item__minus" data-id="${item.id}">−</button>
-			<input class="items-counter-input" data-id="${item.id}" type="text" min="1" max='${item.quantity}' value="${product.count}">
+			<input class="items-counter-input" data-id="${item.id}" type="text" min="1" max='${item.quantity}' value="${cartItem.count}">
 			<button class="btn-item__plus" data-id="${item.id}">+</button>
 		</div>
-		<p class="available-quantity">Осталось ${item.quantity - product.count} шт.</p>
+		<p class="available-quantity">Осталось ${item.quantity - cartItem.count} шт.</p>
 		<div class="item-tags">
 			<img class="tag" src="images/svg/like.svg" alt="like" class="like">
 			<img class="tag delete" src="images/svg/red.svg" data-id="${item.id}" alt="delete">
@@ -137,17 +137,17 @@ export function getCard(item, index) {
 	</div>
 	<div class="price-block">
 		<div class="item-act-price">
-			<p>${(item.price - item.sale - item.castomsale) * product.count} <p class="item-act-price__currency">${item.currency}</p></p>
+			<p>${(item.price - item.sale - item.castomsale) * cartItem.count} <p class="item-act-price__currency">${item.currency}</p></p>
 		</div>
 		<div class="item-price">
-			<p>${item.price * product.count}<p class="item-price__currency">${item.currency}</p></p>
+			<p>${item.price * cartItem.count}<p class="item-price__currency">${item.currency}</p></p>
 		</div>
 		<div class="price-info__tooltip tooltip-sale__size">
 			<div class="tooltip-sale__text">
-				<p>Скидка ${item.percentsale}</p><p class="info__header">- ${item.sale * product.count}</p>
+				<p>Скидка ${item.percentsale}</p><p class="info__header">- ${item.sale * cartItem.count}</p>
 			</div>
 			<div class="tooltip-sale__text">
-				<p>Скидка ${item.percentcastomsale}</p><p class="info__header">- ${item.castomsale * product.count}</p>
+				<p>Скидка ${item.percentcastomsale}</p><p class="info__header">- ${item.castomsale * cartItem.count}</p>
 			</div>
 		</div>
 	</div>
@@ -172,6 +172,7 @@ export function cardSetListenner(){
 	const plusBtn = document.querySelectorAll('.btn-item__plus');
 	const countInput = document.querySelectorAll('.items-counter-input');
 	const deleteBtn = document.querySelectorAll('.delete');
+	const checkBox = document.querySelectorAll('.checkbox-product');
 	like.forEach(el => {
 		el.addEventListener('click',()=>{
 			el.classList.toggle('like-red')
@@ -235,6 +236,14 @@ export function cardSetListenner(){
 			removeProduct(product);
 		})
 	})
+	checkBox.forEach(el => {
+		el.addEventListener('click', (event) => {
+			if (event.target.dataset !== undefined && event.target.dataset.id !== undefined) {
+				const product = findProductById(event.target.dataset.id)
+				toggleCartItem(product);
+			}
+		})
+	})
 }
 
 export function getUnCard(item) {
@@ -277,4 +286,5 @@ export function removeProduct(product) {
 	state.cart = state.cart.filter(cartItem => cartItem.id !== product.id);
 	itemArr = itemArr.filter(item => item.id !== product.id);
 	calculate();
+	console.log('zzz')
 }

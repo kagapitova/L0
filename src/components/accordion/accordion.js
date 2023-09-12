@@ -1,16 +1,18 @@
 import style from './accordion.style.css'
 import {itemArr, renderCartItem, renderUnCartItem, cardSetListenner} from "../itemcard/itemcard";
 import { state } from "../../state";
+import { calculate } from "../../common/calculator";
 export function renderCartAccordion() {
 	const carthtml = renderCartItem(itemArr);
 	const cartUnhtml = renderUnCartItem(itemArr);
 	const accordionOpenClass = state.isAccordionOpen ? 'is-open' : '';
 	const unAccordionOpenClass = state.isUnAccordionOpen ? 'is-open' : '';
+	const checkAllState = state.checkAll ? 'checked' : '';
 	const accHTML = `
 	<div class="checkbox-accordion-cart__container">
-		<label for="all__items" class="label-all-items__container checkbox style-a">
-			<input type="checkbox" id="all__items" name="all__items" checked/>
-			<div class="checkbox__checkmark"></div>
+		<label for="all__items" class="label-all-items__container checkbox checkbox-all style-a">
+			<input type="checkbox" id="all__items" name="all__items" ${checkAllState}/>
+			<div class="checkbox__checkmark check_all"></div>
 			<div class="checkbox__body header-select-all">Выбрать все</div>
 		</label>
 		<button class="accordion"><img class="accordion__arrov" src="images/svg/arrov.svg" alt="arrov"></button>
@@ -36,6 +38,7 @@ export function renderCartAccordion() {
 	const accUnArrov = document.querySelector('.accordion__arrov-unable');
 	const cartUnContent = document.querySelector('.accordion-cart__content-unable');
 	const cartContent = document.querySelector('.accordion-cart__content');
+	const checkAll = document.querySelector('.checkbox-all');
 	accordionBtns.forEach((accordion) => {
 		accordion.onclick = function () {
 			state.isAccordionOpen = !state.isAccordionOpen
@@ -62,5 +65,10 @@ export function renderCartAccordion() {
 			}
 		};
 	});
+	checkAll.addEventListener('click', (event) => {
+		state.checkAll = !state.checkAll;
+		state.cart.forEach(cartItem => cartItem.enabled = state.checkAll);
+		calculate();
+	})
 	cardSetListenner();
 }

@@ -1,4 +1,5 @@
 import styles from './navigation.style.css'
+import { state } from "../../state";
 export function renderNavigation(){
 	let navHTML = `
 			<div class="menu">
@@ -60,7 +61,7 @@ export function renderNavigation(){
 		<div class="cart-logo__container">
 		  <img class="cart-logo__img" src="images/svg/Cart.svg" alt="cart">
       <p class="cart-logo__text">Корзина</p>
-      <div class="cart__item">3</div>
+      <div class="cart__item">${state.cart.length}</div>
 		</div>
 	</div>
 	`;
@@ -107,7 +108,7 @@ export function renderMobilNavbar() {
 		</div>
 		<div class="mobil-svg__navigation cart-logo">
 			<img class="mobil__svg" src="images/svg/cart2.svg">
-			<div class="cart__item22">3</div>
+			<div class="cart__item22">${state.cart.length}</div>
 		</div>
 		<div class="mobil-svg__navigation">
 			<img class="mobil__svg" src="images/svg/favorites.svg">
