@@ -7,6 +7,7 @@ import {renderPaymantBlock} from "./src/components/paymants/paymants";
 import {renderRecipientForm} from "./src/components/recipient/recipient";
 import { calculate } from "./src/common/calculator";
 import {renderDeliveryPopup} from "./src/components/popups/popupdelivery";
+import {renderCartPopup} from "./src/components/popups/popupcards";
 
 renderPage();
 renderNavigation();
@@ -18,3 +19,4 @@ renderPaymantBlock();
 renderRecipientForm();
 calculate();
 renderDeliveryPopup();
+renderCartPopup();
