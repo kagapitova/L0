@@ -8,10 +8,12 @@ export const state = {
         {id: 2, count: 1, enabled: true},
         {id: 3, count: 1, enabled: true},
     ],
-    isAccordionOpen: false,
-    isUnAccordionOpen: false,
+    isAccordionOpen: true,
+    isUnAccordionOpen: true,
     checkAll: true,
-    bankCardId: 1
+    bankCardId: 1,
+    addressId: 1,
+    payRightNow: false
 }
 
 export const getCartItem = id => state.cart.filter(cartItem => cartItem.id === parseInt(id)).shift()

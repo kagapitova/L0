@@ -1,10 +1,17 @@
 import styles from './total.style.css'
 import { state } from "../../state";
-import { renderPrice } from "../../common/functions";
+import { renderPrice, setModals } from "../../common/functions";
 import { checkFormInputs } from "../../components/recipient/recipient";
 import { getBankCardById } from "../../components/popups/popupcards";
+import { getAddressById } from "../../components/popups/popupdelivery";
 export function renderTotalBlock() {
 	const bankCard = getBankCardById(state.bankCardId);
+	const address = getAddressById(state.addressId);
+	const deliveryText = address.isHome ? 'Доставка на дом' : 'Доставка в пункт выдачи';
+	const orderBtnText = state.payRightNow 
+		? `Оплатить ${renderPrice(state.totalPrice)} сом`
+		: 'Заказать';
+	const payRightNowChecked = state.payRightNow ? 'checked' : '';
 	let result = `
 <div class="total__card">
  	<div class="total__header">
@@ -27,12 +34,12 @@ export function renderTotalBlock() {
 	</div>
  	<div class="total__delivery">
 	  <div class="to-text">
-	    <div class="total__delivery-header">Доставка в пункт выдачи</div>
+	    <div class="total__delivery-header">${deliveryText}</div>
 	    <button class="total__delivery-reset-btn"><img src="images/svg/reset.svg" alt="reset"></button>
 		</div>
 		<div>
-			<div class="total__delivery-adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
-			<div class="total__delivery-date">5–8 фев</div>
+			<div class="total__delivery-adress">${address.address}</div>
+			<div class="total__delivery-date">${address.deliveryDate}</div>
 			<div class="total__delivery-decline">
 	       <div class="delivery__note-total"><img class="green-simbol" src="images/svg/shipping.svg" alt="shipping">
 	       <p class="delivery__note-text-total">Обратная доставка товаров на&nbsp;склад при отказе&nbsp;—<a class="delivery__green-text-total">бесплатно</a>
@@ -50,13 +57,13 @@ export function renderTotalBlock() {
 		</div>
 		<div class="total__delivery-decline">
 			<label for="total__items" class="label-total-items__container checkbox style-a total">
-      <input type="checkbox" id="total__items" name="total__items" checked="">
+      <input type="checkbox" id="total__items" name="total__items" ${payRightNowChecked}>
 	     <div class="checkbox__checkmark-total"></div>
 	      <div class="checkbox__body-total header-pay-all">Списать оплату сразу</div>
 	    </label>
 	    <div class="total__pay-info">Спишем оплату с карты при получении</div>
   	</div>
-  <button class="total__btn">Заказать</button>
+  <button class="total__btn">${orderBtnText}</button>
   <div class="total__accept-info">
 	  <img class="total__accept-img" src="images/svg/accept.svg" alt="accept">
 	  <div class="total__accept">Соглашаюсь с правилами  <a class="total__accept" href="https://www.wildberries.ru/services/pravila-polzovaniya-torgovoy-ploshchadkoy">пользования торговой площадкой </a> и  <a class="total__accept" href="https://www.wildberries.ru/services/vozvrat-tovara">возврата</a></div>
@@ -81,5 +88,12 @@ export function renderTotalBlock() {
 	const orderBtn = document.querySelector('.total__btn');
 	orderBtn.addEventListener('click', () => {
 		checkFormInputs();
+	})
+	
+	const payAll = document.querySelector('.label-total-items__container');
+	payAll.addEventListener('click', () => {
+		state.payRightNow = !state.payRightNow;
+		renderTotalBlock();
+		setModals();
 	})
 }

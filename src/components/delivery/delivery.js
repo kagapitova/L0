@@ -1,19 +1,34 @@
 import style from './delivery.style.css'
-export function renderDeliveryBlock(){
+import { getAddressById } from "../../components/popups/popupdelivery";
+import { state } from "../../state";
+
+function getDeliveryAddressHtml(address) {
+	const workDays = address.isHome 
+		? ''
+		: `<div class="working-hours"><img src="images/svg/star.svg" alt="star"><p style="padding-left: 4px;">${address.rating}</p><p style="padding-left: 8px;">${address.workTime}</p></div>`;
+	
+	return `
+		<div class="adress">${address.address}</div>
+		${workDays}
+	`
+}
+export function renderDeliveryBlock() {
+	const address = getAddressById(state.addressId);
+	const addressHtml = getDeliveryAddressHtml(address);
+	const deliveryText = address.isHome ? 'Домашний адрес' : 'Пункт выдачи';
 	let result = `
 <div class="delivery__main-header">Способ доставки <button class="delivery__reset-btn">Изменить</button></div>
 <div class="delivery__main-container">
 	<div class="delivery__info-block">
 		<div class="delivery__headers">
-			<div class="point__header">Пункт выдачи</div>
+			<div class="point__header">${deliveryText}</div>
 			<div class="delivery-cost__header">Стоимость доставки</div>
 			<div class="date-delivery__header1">5—6 февраля</div>
 			<div class="date-delivery__header2">7—8 февраля</div>
 		</div>
 		<div class="delivery__info">
 			<div class="adress__container">
-					<div class="adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
-					<div class="working-hours"><img src="images/svg/star.svg" alt="star"><p style="padding-left: 4px;">4.99</p><p style="padding-left: 8px;">Ежедневно с 10 до 21</p></div>
+				${addressHtml}
 			</div>
 			<div class="cost__container">Бесплатно</div>
 		  <div class="item-img__container1">
@@ -31,8 +46,7 @@ export function renderDeliveryBlock(){
 	<div class="delivery__info-block-smal">
 			<div class="point__header">Пункт выдачи</div>
 			<div class="adress__container">
-					<div class="adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
-					<div class="working-hours"><img src="images/svg/star.svg" alt="star"><p style="padding-left: 2px;">4.99</p><p style="padding-left: 8px;">Ежедневно с 10 до 21</p></div>
+				${addressHtml}
 			</div>
 			<div class="delivery-cost__header">Стоимость доставки</div>
 			<div class="cost__container">Бесплатно</div>
@@ -50,7 +64,7 @@ export function renderDeliveryBlock(){
 			</div>
 		</div>
 	</div>
-	<div class="delivery__note"><img class="green-simbol" src="images/svg/shipping.svg" alt="shipping"><p class="delivery__note-text">Обратная доставка товаров на склад при отказе —<a class="delivery__green-text">бесплатно</a><div class="note__tooltip">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div></p></div>
+	<div class="delivery__note"><img class="green-simbol" src="images/svg/shipping.svg" alt="shipping"><p class="delivery__note-text">Обратная доставка товаров на склад при отказе —<a class="delivery__green-text">бесплатно</a><div class="note__tooltip">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div></p></div>
 </div>
 `;
 	
