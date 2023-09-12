@@ -12,7 +12,6 @@ import {setModals} from "./src/common/functions";
 
 renderPage();
 renderNavigation();
-setMenuToggler();
 renderMobilNavbar();
 renderCartAccordion();
 renderDeliveryBlock();
@@ -21,4 +20,5 @@ renderRecipientForm();
 calculate();
 renderDeliveryPopup();
 renderCartPopup();
+setMenuToggler();
 setModals();

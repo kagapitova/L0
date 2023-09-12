@@ -212,3 +212,12 @@
     background-color: rgba(203, 17, 171, 1);
     margin-top: 4px;
 }
+
+@media screen and (max-width: 800px) {
+
+    .popup__modal-cart, .popup__modal {
+        max-height: unset;
+        max-width: unset;
+        border-radius: unset;
+    }
+}

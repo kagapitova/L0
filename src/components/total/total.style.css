@@ -34,6 +34,10 @@
     width: 20px;
 }
 
+.cart__main-closer {
+    cursor: pointer;
+}
+
 .total__delivery-date {
     color: rgba(203, 17, 171, 1);
     border-bottom-style: dashed;

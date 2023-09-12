@@ -248,7 +248,7 @@ button.accordion-unable {
     .checkbox-accordion-cart__container-unabel {
         gap: 0;
         grid-template-rows: 167px 167px 167px;
-        padding-right: 13px;
+        padding-right: 25px;
     }
 
     .unable__img {

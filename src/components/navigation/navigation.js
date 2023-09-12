@@ -48,7 +48,7 @@ export function renderNavigation(){
 	</div>
 	<div class="search__aside">
 		<button class="search-close__btn">
-				<img src="https://cdn-icons-png.flaticon.com/512/7420/7420933.png" alt="close">
+				<img src="images/svg/close.svg" alt="close">
 		</button>
 		<input class="search-input__aside" type="text" placeholder="Я ищу...">
 		<img class="search__img3" src="images/svg/Search.svg" alt="search">
@@ -71,15 +71,16 @@ export function renderNavigation(){
 
 export function setMenuToggler(){
 	const body = document.querySelector('body');
-	const btn = document.querySelector('.burger-logo__container')
-	const menu = document.querySelector('.menu')
-	const closer = document.querySelector('.menu-close__btn')
-	const search = document.querySelector('.search-mini__btn')
-	const searchAside = document.querySelector('.search__aside')
-	const searchCloser = document.querySelector('.search-close__btn')
-	
+	const btn = document.querySelector('.burger__container');
+	const menu = document.querySelector('.menu');
+	const closer = document.querySelector('.menu-close__btn');
+	const search = document.querySelector('.search-mini__btn');
+	const searchAside = document.querySelector('.search__aside');
+	const searchCloser = document.querySelector('.search-close__btn');
 	
 	btn.addEventListener('click', () => {
+		console.log(btn)
+		console.log('test click')
 		menu.classList.toggle('is-open');
 		body.setAttribute("style", "overflow: hidden");
 	});
