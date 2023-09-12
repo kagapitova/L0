@@ -19,7 +19,8 @@ export const itemArr = [
 		tooltip: 'OOO «ВАЙЛДБЕРРИЗ»',
 		ogrn: 'ОГРН: 5167746237148',
 		adres: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение&nbsp;2, офис&nbsp;34',
-		additionalClass: ''
+		additionalClass: '',
+		additionalSizeBox: '<div class="white-box size">56</div>'
 	},
 	{
 		id: 2,
@@ -38,6 +39,7 @@ export const itemArr = [
 		ogrn: 'ОГРН: 5167746237148',
 		adres: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение&nbsp;2, офис&nbsp;34',
 		additionalClass: 'unabel-marg',
+		additionalSizeBox: ''
 	},
 	{
 		id: 3,
@@ -55,6 +57,7 @@ export const itemArr = [
 		ogrn: 'ОГРН: 5167746237148',
 		adres: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение&nbsp;2, офис&nbsp;34',
 		additionalClass: 'unabel-marg2',
+		additionalSizeBox: ''
 	}
 ];
 
@@ -238,6 +241,7 @@ export function getUnCard(item) {
 	<div class="cart-item__container cart-item__container-unabel unabel-170 ${item.additionalClass}">
 		<div class="checkbox__body cart-item__img unable__img cart-item__img-unabel img-80"><img src=${item.image} alt="${item.alt}"></div>
 		${sizes}
+		${item.additionalSizeBox}
 		<div class="card-text__container card-text__container-unabel">
 			<p class="cart-item__header cart-item__header-unabel">${item.name}</p>
 			${colorSizeHtml}

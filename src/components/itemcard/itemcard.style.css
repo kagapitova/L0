@@ -346,6 +346,12 @@
         padding-top: 8px;
     }
 
+    .white-box.size {
+        top: 58px;
+        left: 6px;
+        width: 22px;
+    }
+
     .item-price {
         padding-left: 5px;
     }
