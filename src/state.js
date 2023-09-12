@@ -8,7 +8,8 @@ export const state = {
         {id: 2, count: 1},
         {id: 3, count: 1},
     ],
-    isAccordionOpen: false
+    isAccordionOpen: false,
+    isUnAccordionOpen: false
 }
 
 export const getCartItem = id => state.cart.filter(cartItem => cartItem.id === parseInt(id)).shift()

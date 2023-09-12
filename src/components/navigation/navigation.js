@@ -3,7 +3,7 @@ export function renderNavigation(){
 	let navHTML = `
 			<div class="menu">
 				<button class="menu-close__btn">
-					<img src="https://cdn-icons-png.flaticon.com/512/7420/7420933.png" alt="close">
+					<img src="images/svg/close.svg" alt="close">
 				</button>
 				<a href="https://www.wildberries.ru/catalog/zhenshchinam" class="menu__link">
 		    	Женщинам
