@@ -8,7 +8,7 @@ import {renderRecipientForm} from "./src/components/recipient/recipient";
 import { calculate } from "./src/common/calculator";
 import {renderDeliveryPopup} from "./src/components/popups/popupdelivery";
 import {renderCartPopup} from "./src/components/popups/popupcards";
-import {setModalAdress} from "./src/common/functions";
+import {setModals} from "./src/common/functions";
 
 renderPage();
 renderNavigation();
@@ -21,4 +21,4 @@ renderRecipientForm();
 calculate();
 renderDeliveryPopup();
 renderCartPopup();
-setModalAdress();
+setModals();

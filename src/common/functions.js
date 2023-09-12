@@ -15,18 +15,24 @@ export const renderPrice = (price) => {
     return result;
 }
 
-export function setModalAdress(){
+export function setModals(){
 const resetBtn = document.querySelector('.delivery__reset-btn');
 const resetPensil = document.querySelector('.total__delivery-reset-btn');
-
-const popupModal = document.querySelector('.popup__modal');
+const resetBtncart = document.querySelector('.payment__reset-btn');
+const resetPensilcart = document.querySelector('.total__cart-reset-btn');
 const popupContainer = document.querySelector('.popup__container');
+const popupContainerCart = document.querySelector('.popup__container-cart');
 const closer = document.querySelector('.delivery__main-closer');
+const closerCart = document.querySelector('.cart__main-closer')
 const pointBlock = document.querySelector('.point-adress');
 
     
     closer.addEventListener('click', ()=>{
         popupContainer.classList.remove('popup__open');
+    })
+    
+    closerCart.addEventListener('click', ()=>{
+        popupContainerCart.style.removeProperty("display");
     })
     
     resetBtn.addEventListener('click',()=>{
@@ -39,6 +45,15 @@ const pointBlock = document.querySelector('.point-adress');
         popupContainer.classList.add('popup__open');
         pointBlock.style.setProperty("display",'flex');
     
+    })
+    
+    
+    resetBtncart.addEventListener('click',()=>{
+        popupContainerCart.style.setProperty("display",'flex');
+    })
+    
+    resetPensilcart.addEventListener('click',()=>{
+        popupContainerCart.style.setProperty("display",'flex');
     })
 
 

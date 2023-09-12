@@ -30,7 +30,7 @@
     font-size: 16px;
 }
 
-.total__delivery-reset-btn {
+.total__delivery-reset-btn, .total__cart-reset-btn {
     width: 20px;
 }
 

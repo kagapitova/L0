@@ -40,7 +40,7 @@ export function renderTotalBlock() {
 		</div>
  	</div>
   <div class="total__payment">
-   <div class="total__delivery-header" style="letter-spacing: -0.03em">Оплата картой <button class="total__delivery-reset-btn"><img src="images/svg/reset.svg" alt="reset"></button></div>
+   <div class="total__delivery-header" style="letter-spacing: -0.03em">Оплата картой <button class="total__cart-reset-btn"><img src="images/svg/reset.svg" alt="reset"></button></div>
    <div class="bank-cart__info-total">
 		<img src="images/svg/bankcard.svg" alt="cart">
 		<div class="cart-number">1234 56•• •••• 1234</div>

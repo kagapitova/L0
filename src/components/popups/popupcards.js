@@ -3,7 +3,7 @@ export function renderCartPopup(){
 	const result = `
 <div class="popup__modal-cart">
 <div>
-	<div class="delivery__main-header-popup">Способ оплаты<img src="images/svg/close.svg" alt="close"></div>
+	<div class="delivery__main-header-popup">Способ оплаты<img class="cart__main-closer" src="images/svg/close.svg" alt="close"></div>
 	<div class="cart-number__container">
 	<div class="popup-cart__container">
 			<input type="radio" class="adress-radio__btn radio__input" id="cart_01" name="cart" checked="">
