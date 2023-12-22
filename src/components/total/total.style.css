@@ -272,14 +272,23 @@ a.total__accept {
     padding-top: 8px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1050px) and (min-width: 1024px) {
+    .total__card {
+        padding: 16px 24px 22px 24px;
+        width: 97%;
+        margin-left: 2px;
+    }
+
+    .note__tooltip-total {
+        left: 0;
+    }
+}
+
+
+@media screen and (max-width: 1023px) {
 
     .total__card {
         padding: 16px 27px 22px 21px;
-    }
-
-    .total__container {
-        width: 29.45%;
     }
 
     .total__accept-img {
@@ -354,7 +363,11 @@ a.total__accept {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1023px) {
+
+    .total__delivery-decline {
+        background: #F0ECF4;
+    }
 
     .total__delivery-date, .total__delivery-adress,
     .total__delivery-header, .total__delivery-reset-btn,
@@ -375,7 +388,9 @@ a.total__accept {
 
     .total__container {
         width: 100%;
+        display: flex;
         margin: auto 0;
+        justify-content: center;
     }
 
     .delivery__green-text-total {

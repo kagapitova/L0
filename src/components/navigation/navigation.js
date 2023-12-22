@@ -2,40 +2,40 @@ import styles from './navigation.style.css'
 import { state } from "../../state";
 export function renderNavigation(){
 	let navHTML = `
-			<div class="menu">
-				<button class="menu-close__btn">
-					<img src="images/svg/close.svg" alt="close">
-				</button>
-				<a href="https://www.wildberries.ru/catalog/zhenshchinam" class="menu__link">
-		    	Женщинам
-				</a>
-				<a href="https://www.wildberries.ru/catalog/muzhchinam" class="menu__link">
-		    	Мужчинам
-				</a>
-				<a href="https://www.wildberries.ru/catalog/detyam" class="menu__link">
-		    	Детям
-				</a>
-				<a href="https://www.wildberries.ru/catalog/obuv" class="menu__link">
-		    	Обувь
-				</a>
-				<a href="https://www.wildberries.ru/catalog/krasota" class="menu__link">
-		    	Красота
-				</a>
-				<a href="https://www.wildberries.ru/catalog/dom-i-dacha" class="menu__link">
-		    	Дом
-				</a>
-			</div>
-		 <button class="burger-logo__container">
-			    <div class="burger__container">
-			    	<span class="burger__span"></span>
-			    	<span class="burger__span"></span>
-			    	<span class="burger__span"></span>
-					</div>
+		<div class="menu">
+			<button class="menu-close__btn">
+				<img src="images/svg/close.svg" alt="close">
 			</button>
-		<p class="logo-mini__text">ТОВАРЫ И ТОЧКА</p>
-		<div class="logo__text">
-			<p class="logo__container">ТОВАРЫ</p>
-			<pre class="logo__container logo__container2">И ТОЧКА</pre>
+			<a href="https://www.wildberries.ru/catalog/zhenshchinam" class="menu__link">
+			Женщинам
+			</a>
+			<a href="https://www.wildberries.ru/catalog/muzhchinam" class="menu__link">
+			Мужчинам
+			</a>
+			<a href="https://www.wildberries.ru/catalog/detyam" class="menu__link">
+			Детям
+			</a>
+			<a href="https://www.wildberries.ru/catalog/obuv" class="menu__link">
+			Обувь
+			</a>
+			<a href="https://www.wildberries.ru/catalog/krasota" class="menu__link">
+			Красота
+			</a>
+			<a href="https://www.wildberries.ru/catalog/dom-i-dacha" class="menu__link">
+			Дом
+			</a>
+		</div>
+		<div class="burger-header__container">
+			<button class="burger-logo__container">
+					<div class="burger__container">
+						<span class="burger__span"></span>
+						<span class="burger__span"></span>
+						<span class="burger__span"></span>
+						</div>
+			</button>
+			<div class="logo__text">
+				<p class="logo__container">ТОВАРЫ И ТОЧКА</p>
+			</div>
 		</div>
 	<div class="input__container">
 			<input class="search__input" type="text" placeholder="Я ищу...">

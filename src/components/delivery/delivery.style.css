@@ -5,7 +5,7 @@
 .delivery__container {
     width: 96.6%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 4%;
+    margin-top: 31px;
     margin-left: 2.4%;
     padding-top: 2%;
     padding-left: 2.9%;
@@ -50,15 +50,18 @@
 }
 
 .delivery__headers {
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.5;
     letter-spacing: 0.01rem;
 }
 
 .delivery-cost__header {
-    margin-top: 25%;
+    margin-top: 24%;
 }
 
 .date-delivery__header1 {
-    margin-top: 13%;
+    margin-top: 10%;
 }
 
 .date-delivery__header2 {
@@ -70,7 +73,7 @@
     line-height: 24px;
     font-size: 12px;
     letter-spacing: 0.03rem;
-    margin-top: 6.6%;
+    margin-top: 53px;
 }
 
 .delivery__note-text, .delivery__green-text {
@@ -97,8 +100,12 @@
 }
 
 .cost__container {
-    padding-top: 13px;
+    padding-top: 20px;
     letter-spacing: -0.01rem;
+}
+
+.adress__container {
+    margin-top: 4px;
 }
 
 .item-img__container1 {
@@ -209,7 +216,26 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1050px) and (min-width: 1024px) {
+    .delivery__container {
+        margin-top: 34px;
+    }
+
+    .date-delivery__header1 {
+        margin-top: 9%;
+    }
+
+    .delivery-cost__header {
+        margin-top: 24%;
+    }
+
+    .delivery__note {
+        margin-top: 9%;
+    }
+
+}
+
+@media screen and (max-width: 1023px) {
 
     .delivery__info-block {
         display: none;
@@ -310,5 +336,11 @@
 
     .green-simbol {
         padding-left: 2px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .note__tooltip {
+        left: 0;
     }
 }

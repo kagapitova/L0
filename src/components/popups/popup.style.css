@@ -37,7 +37,8 @@
 }
 
 .home-adress  {
-    gap: 45px;
+    margin-top: 19px;
+    gap: 27px;
     justify-content: center;
     flex-direction: column;
     display: none;
@@ -100,7 +101,7 @@
     width: 100%;
     display: flex;
     gap: 8px;
-    margin-top: 13px;
+    margin-top: 9px;
 }
 
 .popup-adress__container {
@@ -133,7 +134,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 13px;
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 28px;
 }
 
 .adress__container-pop {
@@ -211,13 +212,18 @@
     border-radius: 8px;
     background-color: rgba(203, 17, 171, 1);
     margin-top: 4px;
+    margin-bottom: 10px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1023px) {
 
     .popup__modal-cart, .popup__modal {
         max-height: unset;
         max-width: unset;
         border-radius: unset;
+    }
+
+    .submit__adress {
+        width: unset;
     }
 }

@@ -94,21 +94,23 @@ export function renderDeliveryPopup() {
 	const result = `
 	<div class="popup__modal">
 		<div>
-			<div class="delivery__main-header-popup">Способ доставки<img class="delivery__main-closer" src="images/svg/close.svg" alt="close"></div>
-			<div class="adress__togler">
-				<button class="popup__btn-point  popup__btn active__btn">В пункт выдачи</button>
-				<button class="popup__btn-adress popup__btn">Курьером</button>
+			<div>
+				<div class="delivery__main-header-popup">Способ доставки<img class="delivery__main-closer" src="images/svg/close.svg" alt="close"></div>
+				<div class="adress__togler">
+					<button class="popup__btn-point  popup__btn active__btn">В пункт выдачи</button>
+					<button class="popup__btn-adress popup__btn">Курьером</button>
+				</div>
+				<div class="popup-adress__header">Мои адреса</div>
 			</div>
-			<div class="popup-adress__header">Мои адреса</div>
-		</div>
-		<div class="popup-adress__container">
-			<div class="point-adress  visible">
-				${pickPointAddressesHtml}
+			<div class="popup-adress__container">
+				<div class="point-adress  visible">
+					${pickPointAddressesHtml}
+				</div>
+				<div class="home-adress">
+					${homeAddressesHtml}
+				</div>
 			</div>
-			<div class="home-adress">
-				${homeAddressesHtml}
-			</div>
-		</div>
+		</div>	
 		<button class="submit__adress set_address">Выбрать</button>
 	</div>
 `
