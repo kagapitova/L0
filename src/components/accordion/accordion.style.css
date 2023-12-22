@@ -30,7 +30,7 @@ button.accordion-unable {
 
 .unable__accordion {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 25px;
+    padding-top: 32px;
     font-size: 15px;
     font-weight: 400;
     line-height: 24px;
@@ -158,6 +158,19 @@ button.accordion-unable {
     padding-bottom: 2px;
 }
 
+@media screen and (min-width: 1024px)  and (max-width: 1050px) {
+    .accordion-cart__content.is-open, .accordion-cart__content-unable.is-open {
+        margin-left: 7px;
+        padding-right: 12px;
+    }
+
+    .card-text__container {
+        padding-left: 1.9%;
+        padding-top: 11px;
+    }
+}
+
+
 @media screen and (max-width: 1025px) {
 
     .cart__header {
@@ -185,15 +198,10 @@ button.accordion-unable {
     }
 }
 
+@media screen and (max-width: 1023px) {
 
-@media screen and (max-width: 800px) {
-
-    .accordion-cart__content-unable.is-open {
-        gap: 0;
-        display: grid;
-        width: 99%;
-        max-height: none;
-        transition: max-height 0.2s ease-in-out;
+    .accordion-cart__content.is-open, .accordion-cart__content-unable.is-open {
+        margin-left: 1px;
     }
 
     .cart__container {

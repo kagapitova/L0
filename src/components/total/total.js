@@ -25,7 +25,7 @@ export function renderTotalBlock() {
 		</div>
 		<div class="total__text-sale to-text">
 	    	<div class="total__text-sale-left">Скидка</div>
-	    	<div class="total__text-sale-right">- ${renderPrice(state.totalSale)} сом</div>
+	    	<div class="total__text-sale-right">− ${renderPrice(state.totalSale)} сом</div>
 		</div>
 		<div class="total__text-delivery to-text">
 	    	<div class="total__text-delivery-left">Доставка</div>

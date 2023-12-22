@@ -9,7 +9,6 @@
 
 .recipient__form {
     display: flex;
-    gap: 8px;
     flex-direction: column;
 }
 
@@ -18,7 +17,7 @@
     vertical-align: top;
     position: relative;
     width: 100%;
-    height: 55px;
+    height: 71px;
 }
 
 .recipient__form__two-items, .recipient__form__three-items {
@@ -48,7 +47,6 @@
 .recipient__container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     background-color: #FFFFFF;
     border-radius: 16px;
     padding: 22px 16px 24px 27px;
@@ -112,7 +110,7 @@
 
 
 .recipient__form__two-items {
-    padding-top: 17px;
+    padding-top: 12px;
     width: 85%;
 }
 
@@ -138,7 +136,7 @@
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1023px) {
 
     .recipient__container {
         padding: 16px 16px 24px 16px;
@@ -155,7 +153,6 @@
     .recipient__form__two-items, .recipient__form__three-items {
         display: flex;
         flex-direction: column;
-        gap: 8px;
         width: unset;
     }
 
@@ -167,14 +164,11 @@
 
     .form-item {
         width: 100%;
-        height: 65px;
-    }
-
-    .recipient__form__two-items {
-        padding-top: 2px;
+        height: 71px;
     }
 
     .recipient-inn__helper {
         line-height: 10px;
+        margin-top: 3px;
     }
 }
